@@ -23,7 +23,7 @@ public class MainApp extends Application {
     public static String screen2ID = "login";
     public static String screen2File = "/tn/esprit/projet/view/client/login.fxml";
     public static String screen3ID = "gestionnews";
-    public static String screen3File = "/tn/esprit/projet/view/admin/GestionNewsGUI.fxml";
+    public static String screen3File = "/tn/esprit/projet/view/admin/GestionNews.fxml";
 
     @Override
     public void start(Stage primaryStage) {
