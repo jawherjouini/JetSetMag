@@ -17,6 +17,7 @@ import tn.esprit.projet.util.*;
  */
 public class MainApp extends Application {
     String name;
+    int i;
 
     public static String screen1ID = "Accueil";
     public static String screen1File = "/tn/esprit/projet/view/client/Accueil.fxml";
