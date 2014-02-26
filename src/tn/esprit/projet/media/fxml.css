@@ -1,0 +1,34 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.btnleft{
+    -fx-background-color: black;
+   -fx-border-radius: 20 0 0 20;
+  -fx-background-radius: 20 0 0 20;
+    
+}
+.btnright{
+    -fx-background-color: black;
+   -fx-border-radius: 0 20 20 0;
+  -fx-background-radius: 0 20 20 0;
+    
+}
+.btncenter{
+    -fx-background-color: black;
+   -fx-border-radius: 0 ;
+  -fx-background-radius: 0 ;
+    
+}
+.button:pressed {
+    
+    -fx-background-insets: 5;
+}
+.button:hover {
+    -fx-background-color: 
+        linear-gradient(white 25%, darksalmon 75%, white 100%),
+        radial-gradient(center 50% 50%, radius 70%, #ff3366, #000000);
+}
