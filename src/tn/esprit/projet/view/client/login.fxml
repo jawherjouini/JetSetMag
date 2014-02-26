@@ -17,9 +17,9 @@
             <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
               <children>
                 <Label id="label1" layoutX="14.0" layoutY="67.0" text="Username" />
-                <TextField id="textField1" layoutY="86.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
+                <TextField id="textField1" fx:id="tfuser" layoutY="86.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
                 <Label id="label1" layoutX="14.0" layoutY="139.0" text="Password" />
-                <PasswordField id="passwordField1" layoutY="157.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
+                <PasswordField id="passwordField1" fx:id="tfpassword" layoutY="157.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
                 <ImageView id="app-login-logo" layoutY="-12.0">
                   <image>
                     <Image url="@../../media/LoginLogo.png" preserveRatio="true" smooth="true" />
@@ -37,6 +37,7 @@
         <Label id="label2" prefHeight="17.0" />
       </children>
     </HBox>
+    <Label fx:id="verif" contentDisplay="CENTER" layoutX="372.0" layoutY="432.0" prefWidth="280.0" text="" />
   </children>
   <stylesheets>
     <URL value="@../../media/login.css" />

@@ -12,6 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import tn.esprit.projet.dao.CommonDAO;
+import tn.esprit.projet.dao.MembreDao;
+import tn.esprit.projet.main.MainApp;
 import tn.esprit.projet.util.ControlledScreen;
 import tn.esprit.projet.util.ScreensController;
 
@@ -21,9 +27,16 @@ import tn.esprit.projet.util.ScreensController;
  * @author Jawher
  */
 public class loginController implements Initializable,ControlledScreen {
+    MembreDao cdao = new MembreDao();
     ScreensController screencontroller;
     @FXML
     private Button btn;
+    @FXML
+    private TextField tfuser;
+    @FXML
+    private PasswordField tfpassword;
+    @FXML
+    private Label verif;
 
     /**
      * Initializes the controller class.
@@ -35,11 +48,23 @@ public class loginController implements Initializable,ControlledScreen {
 
     @FXML
     private void processLogin(ActionEvent event) {
+        
+        if (cdao.authentification(tfuser.getText(), tfpassword.getText())==2) {
+            screencontroller.setScreen(MainApp.screen3ID);
+        }
+        else 
+        if (cdao.authentification(tfuser.getText(), tfpassword.getText())==0) 
+                
+           
+          verif.setText("Username or password is incorrect !!!!");   
+        
+          
     }
 
     @Override
     public void SetScreenParent(ScreensController screenpage) {
         screencontroller=screenpage;
     }
+    
     
 }

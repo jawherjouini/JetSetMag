@@ -22,6 +22,8 @@ public class MainApp extends Application {
     public static String screen1File = "/tn/esprit/projet/view/client/Accueil.fxml";
     public static String screen2ID = "login";
     public static String screen2File = "/tn/esprit/projet/view/client/login.fxml";
+    public static String screen3ID = "gestionnews";
+    public static String screen3File = "/tn/esprit/projet/view/admin/GestionNewsGUI.fxml";
 
     @Override
     public void start(Stage primaryStage) {
@@ -29,6 +31,7 @@ public class MainApp extends Application {
         ScreensController mainCantainer = new ScreensController();
         mainCantainer.loadscreen(screen1ID, screen1File);
         mainCantainer.loadscreen(screen2ID, screen2File);
+        mainCantainer.loadscreen(screen3ID, screen3File);
         mainCantainer.setScreen(MainApp.screen1ID);
         Group root = new Group();
         root.getChildren().addAll(mainCantainer);

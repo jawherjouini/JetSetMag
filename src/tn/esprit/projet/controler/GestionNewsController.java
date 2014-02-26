@@ -20,13 +20,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import tn.esprit.projet.dao.CommonDAO;
 import tn.esprit.projet.model.Article;
+import tn.esprit.projet.util.ControlledScreen;
+import tn.esprit.projet.util.ScreensController;
 
 /**
  * FXML Controller class
  *
  * @author Jawher
  */
-public class GestionNewsController implements Initializable {
+public class GestionNewsController implements Initializable,ControlledScreen {
+    ScreensController screencontroller;
     @FXML
     private MenuBar menu;
     @FXML
@@ -76,6 +79,11 @@ public class GestionNewsController implements Initializable {
             TableColumn t = new TableColumn(s);
             tab.getColumns().add(t);
         }
+    }
+
+    @Override
+    public void SetScreenParent(ScreensController screenpage) {
+        screencontroller = screenpage;
     }
     
 }
