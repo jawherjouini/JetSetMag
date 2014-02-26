@@ -16,7 +16,7 @@ import tn.esprit.projet.util.*;
  * @author oukhay
  */
 public class MainApp extends Application {
-   boolean trouve;
+   String trouve;
 
     public static String screen1ID = "Accueil";
     public static String screen1File = "/tn/esprit/projet/view/client/Accueil.fxml";
