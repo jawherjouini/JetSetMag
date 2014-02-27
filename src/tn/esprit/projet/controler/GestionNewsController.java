@@ -15,8 +15,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.HTMLEditor;
 import tn.esprit.projet.dao.ArticleDAO;
 import tn.esprit.projet.dao.CommonDAO;
 import tn.esprit.projet.model.Article;
@@ -47,6 +49,18 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     private Tab onglet_ajout;
     @FXML
     private Tab onglet_modif;
+    @FXML
+    private TextField tf_titre;
+    @FXML
+    private Button btn_add;
+    @FXML
+    private HTMLEditor html_text;
+    @FXML
+    private HTMLEditor html_text_mod;
+    @FXML
+    private TextField tf_id;
+    @FXML
+    private TextField tf_titre_mod;
 
     /**
      * Initializes the controller class.
@@ -91,4 +105,13 @@ public class GestionNewsController implements Initializable, ControlledScreen {
         charger();
     }
 
+    @FXML
+    private void ajouterArticle(ActionEvent event) {
+        Article a = new Article();
+        a.setTitre(tf_titre.getText());
+        a.setTexte(html_text.getHtmlText().replaceAll("\"", ""));
+        System.out.println(a.getTexte());
+        adao.add(a);
+        charger();
+    }
 }

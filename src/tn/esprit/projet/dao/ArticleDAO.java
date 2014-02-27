@@ -91,4 +91,26 @@ public class ArticleDAO {
         return result;
     }
 
+    public boolean add(Article a) {
+        Statement stmt;
+        boolean result = false;
+        Connection cnx;
+        int rs;
+        try {
+            cnx = Connexion.getInstance();
+            String query = "insert into article (titre,texte,note_moy,nbr_visite) values (\"" + a.getTitre() + "\",\"" + a.getTexte() + "\"," + a.getNote_moy() + "," + a.getNbr_visite() + ")";
+            stmt = cnx.createStatement();
+            rs = stmt.executeUpdate(query);
+
+            if (rs > 0) {
+                result = true;
+            }
+            System.out.println(result);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Ajout impossible: " + ex.getMessage());
+        }
+        return result;
+    }
+
 }
