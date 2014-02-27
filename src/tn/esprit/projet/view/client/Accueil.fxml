@@ -49,24 +49,12 @@
         </Button>
       </children>
     </HBox>
-    <Text fill="#bfbfbf" scaleX="6.265338726673239" scaleY="6.088280846670108" strokeType="OUTSIDE" strokeWidth="0.0" text="JetSet" AnchorPane.bottomAnchor="435.96" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="733.31" AnchorPane.topAnchor="126.6">
-      <font>
-        <Font size="13.0" fx:id="x4" />
-      </font>
-    </Text>
-    <Text fill="#ff7a00" rotate="90.0" scaleX="1.5955619522823314" scaleY="1.6834684585449666" strokeType="OUTSIDE" strokeWidth="0.0" text="Mag" AnchorPane.bottomAnchor="411.58" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="579.13" AnchorPane.topAnchor="137.65">
-      <font>
-        <Font name="System Bold" size="23.0" />
-      </font>
-    </Text>
-    <Text fill="#ffb200cd" scaleX="1.422911065282742" scaleY="2.04472527159599" strokeType="OUTSIDE" strokeWidth="0.0" text="Think outside the box" AnchorPane.bottomAnchor="390.26" AnchorPane.leftAnchor="184.57" AnchorPane.rightAnchor="674.43" AnchorPane.topAnchor="169.2">
-      <font>
-        <Font size="16.0" />
-      </font>
-    </Text>
     <HBox id="HBox" alignment="CENTER" layoutY="176.0" prefHeight="37.0" prefWidth="205.6796875" spacing="20.0" AnchorPane.leftAnchor="688.0" AnchorPane.rightAnchor="139.0">
       <children>
-        <Hyperlink fx:id="connecter" font="$x4" onAction="#authentifier" text="Se connecter" textAlignment="LEFT" textOverrun="WORD_ELLIPSIS" wrapText="true">
+        <Hyperlink fx:id="connecter" onAction="#authentifier" text="Se connecter" textAlignment="LEFT" textOverrun="WORD_ELLIPSIS" wrapText="true">
+          <font>
+            <Font size="13.0" fx:id="x4" />
+          </font>
           <textFill>
             <Color blue="0.750" green="0.750" red="0.750" fx:id="x3" />
           </textFill>
@@ -74,6 +62,11 @@
         <Hyperlink font="$x4" text="S'inscrire" textFill="$x3" />
       </children>
     </HBox>
+    <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../media/LoginLogo.png" />
+      </image>
+    </ImageView>
   </children>
   <stylesheets>
     <URL value="@../../media/fxml.css" />

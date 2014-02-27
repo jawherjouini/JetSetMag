@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import tn.esprit.projet.dao.ArticleDAO;
@@ -39,6 +40,8 @@ public class AccueilController implements Initializable,ControlledScreen {
     private Hyperlink connecter;
     @FXML
     private Color x3;
+    @FXML
+    private ImageView logo;
 
     /**
      * Initializes the controller class.
