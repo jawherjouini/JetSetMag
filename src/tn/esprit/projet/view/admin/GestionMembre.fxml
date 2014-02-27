@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="477.0" prefWidth="769.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.GestionMembreController">
+  <children>
+    <VBox id="VBox" alignment="CENTER" prefHeight="404.0" prefWidth="767.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="73.0">
+      <children>
+        <MenuBar fx:id="menu" minHeight="21.0" prefHeight="43.0" prefWidth="769.0" VBox.vgrow="ALWAYS">
+          <menus>
+            <Menu mnemonicParsing="false" text="Fichier" fx:id="fichier">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Mon profil" fx:id="profil" />
+                <MenuItem mnemonicParsing="false" text="Close" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Films" fx:id="films" />
+            <Menu mnemonicParsing="false" text="News" fx:id="news" />
+            <Menu mnemonicParsing="false" text="Evènements" fx:id="events" />
+            <Menu mnemonicParsing="false" text="Membres" fx:id="membres" />
+            <Menu mnemonicParsing="false" text="Salles de cinéma" fx:id="salles" />
+            <Menu mnemonicParsing="false" text="Commentaires" fx:id="comms" />
+            <Menu mnemonicParsing="false" text="Statistiques" fx:id="stats" />
+          </menus>
+        </MenuBar>
+        <TabPane fx:id="tabpane" prefHeight="356.0" prefWidth="707.0" side="TOP" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+          <tabs>
+            <Tab fx:id="onglet_cons" text="Consultation">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="769.0">
+                  <children>
+                    <Button fx:id="btn_del" mnemonicParsing="false" text="Supprimer" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="102.0" />
+                    <VBox id="VBox" alignment="CENTER" prefHeight="240.0" prefWidth="740.0" spacing="5.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                      <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Column X" />
+                            <TableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="onglet_ajout" closable="false" text="Ajout">
+              <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <children>
+                    <Pane fx:id="pane" layoutX="172.0" layoutY="15.0" opacity="0.84" prefHeight="222.0" prefWidth="487.0" style=" -fx-background-color:#63a9d6;&#10;-fx-background-radius: 5.0; &#10;    -fx-padding: 8;">
+                      <effect>
+                        <InnerShadow />
+                      </effect>
+                    </Pane>
+                    <Label id="x2" layoutX="256.0" layoutY="95.0" opacity="1.0" prefWidth="68.9998779296875" text="Nom" textOverrun="CLIP">
+                      <font>
+                        <Font name="System Bold" size="14.0" fx:id="x1" />
+                      </font>
+                    </Label>
+                    <Label id="x3" font="$x1" layoutX="256.0" layoutY="114.0" opacity="1.0" text="User Name" textOverrun="CLIP" />
+                    <Label id="x6" font="$x1" layoutX="256.0" layoutY="133.0" opacity="1.0" prefWidth="69.0" text="Email" />
+                    <TextField id="x4" fx:id="Nom" editable="true" layoutX="371.0" layoutY="92.0" opacity="1.0" prefWidth="179.0" rotate="0.0" />
+                    <TextField id="x5" fx:id="User_name" layoutX="371.0" layoutY="114.0" opacity="1.0" prefWidth="178.00009999999747" />
+                    <TextField id="x7" fx:id="email" layoutX="372.0" layoutY="136.0" onKeyPressed="#prop" opacity="1.0" prefWidth="178.0" />
+                    <Button layoutX="271.0" layoutY="269.0" mnemonicParsing="false" prefWidth="116.0" style="fx-background-color: &#10;        linear-gradient(#f2f2f2, #d6d6d6),&#10;        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),&#10;        linear-gradient(#dddddd 0%, #f6f6f6 50%);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Confirmer" />
+                    <Button layoutX="461.0" layoutY="269.0" mnemonicParsing="false" prefWidth="123.0" style="fx-background-color: &#10;        linear-gradient(#f2f2f2, #d6d6d6),&#10;        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),&#10;        linear-gradient(#dddddd 0%, #f6f6f6 50%);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Annuler" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="onglet_modif" text="Modification">
+              <content>
+                <AnchorPane id="Content" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
