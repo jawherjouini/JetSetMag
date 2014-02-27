@@ -16,7 +16,6 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import tn.esprit.projet.dao.ArticleDAO;
 import tn.esprit.projet.main.MainApp;
 import tn.esprit.projet.util.ControlledScreen;
 import tn.esprit.projet.util.ScreensController;
