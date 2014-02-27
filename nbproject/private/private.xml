@@ -10,6 +10,7 @@
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/main/MainApp.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/AccueilController.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/loginController.java</file>
+            <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/dao/CommonDAO.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/GestionNewsController.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/dao/MembreDao.java</file>
         </group>

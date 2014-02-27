@@ -18,18 +18,21 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.web.HTMLEditor;
+import tn.esprit.projet.dao.ArticleDAO;
 import tn.esprit.projet.dao.CommonDAO;
-import tn.esprit.projet.model.Article;
 import tn.esprit.projet.util.ControlledScreen;
 import tn.esprit.projet.util.ScreensController;
 
 /**
  * FXML Controller class
  *
- * @author Jawher
+ * @author oukhay
  */
 public class GestionNewsController implements Initializable,ControlledScreen {
     ScreensController screencontroller;
+    CommonDAO cdao = new CommonDAO();
     @FXML
     private MenuBar menu;
     @FXML
@@ -57,22 +60,38 @@ public class GestionNewsController implements Initializable,ControlledScreen {
     @FXML
     private Button btn_del;
     @FXML
-    private TableView<Article> tab;
+    private TableView<Object> tab;
     @FXML
     private Tab onglet_ajout;
     @FXML
+    private TextField tf_titre_article_a;
+    @FXML
+    private Button btn_ajout;
+    @FXML
+    private HTMLEditor he_texte_a;
+    @FXML
     private Tab onglet_modif;
+    @FXML
+    private HTMLEditor he_texte_m;
+    @FXML
+    private TextField tf_id_article;
+    @FXML
+    private Button btn_modifier;
+    @FXML
+    private TextField tf_titre_article_m;
     
-    CommonDAO cdao = new CommonDAO();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        charger();
-    } 
+      charger();
+      
+    }  
     
+
+      
     public void charger() {
         tab.getColumns().clear();
         for (String s : cdao.ColonneName("article")) {

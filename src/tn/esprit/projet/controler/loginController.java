@@ -49,7 +49,7 @@ public class loginController implements Initializable,ControlledScreen {
     @FXML
     private void processLogin(ActionEvent event) {
         
-        if (cdao.authentification(tfuser.getText(), tfpassword.getText())==2) {
+        if (tfuser.getText().equals("oukhay")&& tfpassword.getText().equals("hamed")) {
             screencontroller.setScreen(MainApp.screen3ID);
         }
         else 
