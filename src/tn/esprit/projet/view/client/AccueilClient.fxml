@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet ../../media/AccueilClient.css?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.AccueilClientController">
+  <children>
+    <AnchorPane id="p" fx:id="header" minHeight="0.0" minWidth="0.0" prefHeight="75.0" prefWidth="1200.0" AnchorPane.bottomAnchor="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" layoutX="421.0" layoutY="0.0" prefHeight="78.0" spacing="5.0">
+          <children>
+            <Button id="" fx:id="btnBoxOffice" mnemonicParsing="false" onAction="#moveToBoxOffice" prefHeight="76.0" prefWidth="137.0" style="&#10;" styleClass="menubtnh" text="Box Office">
+              <stylesheets>
+                <URL value="@../../media/AccueilClient.css" />
+              </stylesheets>
+            </Button>
+            <Button id="" fx:id="btnNews" mnemonicParsing="false" onAction="#moveToNews" prefHeight="76.0" prefWidth="137.0" style="&#10;" styleClass="menubtnh" text="News" />
+            <Button id="" fx:id="btnEvents" mnemonicParsing="false" onAction="#moveToEvents" prefHeight="76.0" prefWidth="137.0" style="&#10;" styleClass="menubtnh" text="Events" />
+            <Button id="" fx:id="btnBonPlan" mnemonicParsing="false" onAction="#moveToBonsPlans" prefHeight="76.0" prefWidth="137.0" style="&#10;" styleClass="menubtnh" text="Bons Plans" />
+            <Button id="" fx:id="btnMonProfil" mnemonicParsing="false" onAction="#moveToMonProfil" prefHeight="76.0" prefWidth="137.0" style="&#10;" styleClass="menubtnh" text="Mon Profil">
+              <font>
+                <Font size="13.0" />
+              </font>
+            </Button>
+          </children>
+        </HBox>
+        <Group id="Group" layoutX="55.0" layoutY="5.0">
+          <children>
+            <Text layoutX="33.0" layoutY="35.0" scaleX="1.6568077527109386" scaleY="1.478835526479375" strokeType="OUTSIDE" strokeWidth="0.0" text="JetSet">
+              <font>
+                <Font name="HURTMOLD_" size="30.0" />
+              </font>
+            </Text>
+            <Text layoutX="157.0" layoutY="41.0" rotate="90.0" scaleX="1.8538758869745284" scaleY="2.413480318533904" strokeType="OUTSIDE" strokeWidth="0.0" text="mag">
+              <fill>
+                <Color blue="0.000" green="0.480" red="1.000" fx:id="x1" />
+              </fill>
+              <font>
+                <Font name="HURTMOLD_" size="13.0" fx:id="x2" />
+              </font>
+            </Text>
+            <Text fill="$x1" font="$x2" layoutX="9.0" layoutY="59.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Think Outside The Box" underline="true" />
+          </children>
+        </Group>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="panedown" fx:id="banner" prefHeight="130.0" prefWidth="1200.0" style="-fx-background-color:black;" AnchorPane.bottomAnchor="455.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <children>
+        <Text fx:id="titre" fill="WHITE" layoutX="92.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+          <font>
+            <Font name="HURTMOLD_" size="35.0" />
+          </font>
+        </Text>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="body" fx:id="body1" maxWidth="-1.0" prefHeight="455.0" prefWidth="1200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="191.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../media/AccueilClient.css" />
+  </stylesheets>
+</AnchorPane>
