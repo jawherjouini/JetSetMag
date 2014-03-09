@@ -17,7 +17,6 @@ import tn.esprit.projet.model.Production;
 public class ProjectionUtil {
     
         int id_film;
-	String date_sortie;
 	String synopsis;
 	Date date_ajout;
         String nom_film;
@@ -33,8 +32,7 @@ public class ProjectionUtil {
     public ProjectionUtil() {
     }
 
-    public ProjectionUtil(String date_sortie, String synopsis, Date date_ajout, String titre, String duree, int id_salle, String adresse, String emplacement, String nom_salle, int id_projection, String date_projection) {
-        this.date_sortie = date_sortie;
+    public ProjectionUtil( String synopsis, Date date_ajout, String titre, String duree, int id_salle, String adresse, String emplacement, String nom_salle, int id_projection, String date_projection) {
         this.synopsis = synopsis;
         this.date_ajout = date_ajout;
         this.nom_film = titre;
@@ -47,9 +45,8 @@ public class ProjectionUtil {
         this.date_projection = date_projection;
     }
 
-    public ProjectionUtil(int id_film, String date_sortie, String synopsis, Date date_ajout, String titre, String duree, Production production, int id_salle, String adresse, String emplacement, String nom_salle, int id_projection, String date_projection) {
+    public ProjectionUtil(String date_sortie, String synopsis, Date date_ajout, String titre, String duree, Production production, int id_salle, String adresse, String emplacement, String nom_salle, int id_projection, String date_projection) {
         this.id_film = id_film;
-        this.date_sortie = date_sortie;
         this.synopsis = synopsis;
         this.date_ajout = date_ajout;
         this.nom_film = titre;
@@ -71,13 +68,6 @@ public class ProjectionUtil {
         this.id_film = id_film;
     }
 
-    public String getDate_sortie() {
-        return date_sortie;
-    }
-
-    public void setDate_sortie(String date_sortie) {
-        this.date_sortie = date_sortie;
-    }
 
     public String getSynopsis() {
         return synopsis;
@@ -159,11 +149,11 @@ public class ProjectionUtil {
         this.id_projection = id_projection;
     }
 
-    public String getDate_projection() {
+    public String getDate_heure() {
         return date_projection;
     }
 
-    public void setDate_projection(String date_projection) {
+    public void setDate_heure(String date_projection) {
         this.date_projection = date_projection;
     }
 
@@ -173,7 +163,6 @@ public class ProjectionUtil {
     public int hashCode() {
         int hash = 3;
         hash = 11 * hash + this.id_film;
-        hash = 11 * hash + Objects.hashCode(this.date_sortie);
         hash = 11 * hash + Objects.hashCode(this.synopsis);
         hash = 11 * hash + Objects.hashCode(this.date_ajout);
         hash = 11 * hash + Objects.hashCode(this.nom_film);
@@ -200,9 +189,7 @@ public class ProjectionUtil {
         if (this.id_film != other.id_film) {
             return false;
         }
-        if (!Objects.equals(this.date_sortie, other.date_sortie)) {
-            return false;
-        }
+      
         if (!Objects.equals(this.synopsis, other.synopsis)) {
             return false;
         }

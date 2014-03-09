@@ -94,4 +94,9 @@ public class GestionAllController implements Initializable, ControlledScreen {
         }
     }
 
+    @FXML
+    private void goToProjections(ActionEvent event) {
+        loading(MainApp.g_projectionFile);
+    }
+
 }

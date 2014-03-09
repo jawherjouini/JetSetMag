@@ -43,6 +43,9 @@ public class MainApp extends Application {
     public static String g_filmID = "film";
     public static String g_filmFile = "/tn/esprit/projet/view/admin/GestionFilm.fxml";
   
+    public static String g_projectionID = "projection";
+    public static String g_projectionFile = "/tn/esprit/projet/view/admin/GestionProjection.fxml";
+  
    //************Client************************//
     
     public static String c_newsID = "news";
@@ -97,6 +100,7 @@ public class MainApp extends Application {
 
          mainCantainer = new ScreensController();
          mainCantainer.loadscreen(screen1ID, screen1File);
+         mainCantainer.loadscreen(g_gestionallID, g_gestionallFile);
      mainCantainer.loadscreen(screen2ID, screen2File);
      // mainCantainer.loadscreen(screen3ID, screen3File);
 //   //    mainCantainer.loadscreen(screen4ID, screen4File);

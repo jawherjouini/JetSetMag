@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.RegarderFilmController">
   <children>
-    <ListView fx:id="listFilm" onMouseClicked="#afficherFilm" prefHeight="340.0" prefWidth="328.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
+    <ListView fx:id="listFilm" blendMode="DARKEN" onMouseClicked="#afficherFilm" prefHeight="340.0" prefWidth="328.0" style="-fx-background-color : black;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
     <TextArea fx:id="titrefilm" disable="true" opacity="1.0" prefHeight="47.999900000002526" prefWidth="482.0" style=" -fx-text-fill:black;" wrapText="true" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="16.0" />
     <HBox id="HBox" alignment="CENTER" layoutX="77.0" layoutY="1.0" prefHeight="34.0" prefWidth="213.0" spacing="5.0" style="-fx-background-radius:0 0 20 20;&#10;-fx-boder-radius:0 0 20 20;&#10;-fx-background-color:#2c2c2c;">
       <children>

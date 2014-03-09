@@ -11,14 +11,6 @@ public class Film {
 	Date date_ajout;
         String nom_film;
         String duree;
-
-    public String getNom_film() {
-        return nom_film;
-    }
-
-    public void setNom_film(String nom_film) {
-        this.nom_film = nom_film;
-    }
        
     public Film() {
     }
@@ -37,6 +29,14 @@ public class Film {
 
 
     public Film(int id_film, String date_sortie, String synopsis, Date date_ajout, String titre, String duree) {
+        this.id_film = id_film;
+        this.date_sortie = date_sortie;
+        this.synopsis = synopsis;
+        this.date_ajout = date_ajout;
+        this.nom_film = titre;
+        this.duree = duree;
+    }
+     public Film(int id_film, String synopsis, Date date_ajout, String titre, String duree) {
         this.id_film = id_film;
         this.date_sortie = date_sortie;
         this.synopsis = synopsis;
@@ -79,7 +79,13 @@ public class Film {
         this.date_ajout = date_ajout;
     }
 
+    public String getNom_film() {
+        return nom_film;
+    }
 
+    public void setNom_film(String titre) {
+        this.nom_film = titre;
+    }
 
     public String getDuree() {
         return duree;
@@ -91,7 +97,7 @@ public class Film {
 
     @Override
     public String toString() {
-        return "Film{" + "id_film=" + id_film + ", date_sortie=" + date_sortie + ", synopsis=" + synopsis + ", date_ajout=" + date_ajout + ", titre=" + nom_film+ ", duree=" + duree + '}';
+        return "Film{" + "id_film=" + id_film + ", date_sortie=" + date_sortie + ", synopsis=" + synopsis + ", date_ajout=" + date_ajout + ", titre=" + nom_film + ", duree=" + duree + '}';
     }
 
         

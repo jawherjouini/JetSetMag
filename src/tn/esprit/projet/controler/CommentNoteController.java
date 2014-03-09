@@ -113,24 +113,19 @@ public class CommentNoteController implements Initializable, ControlledScreen {
 
     public void charger() {
         if (eventSelect != null) {
-            lbnote.setText("Note : " + notDao.getNoteById(eventSelect.getId_evenement()) + " /5");
-
-            CommentaireDAO cdao = new CommentaireDAO();
-            // MembreDao mdao = new MembreDao();
+            lbnote.setText("Note : " + notDao.getNoteById(eventSelect.getId_evenement(),"evenement") + " /5");
             System.out.println(SoireeController.eventSelect.getTitre_event());
             lb_titre.setText(SoireeController.eventSelect.getTitre_event());
             System.out.println(SoireeController.eventSelect);
             list.setItems(cdao.ListerCommentairesById(SoireeController.eventSelect.getId_evenement()));
         } else if (articleSelect != null) {
-            lbnote.setText("Note : " + notDao.getNoteById(articleSelect.getId_article()) + " /5");
-            CommentaireDAO cdao = new CommentaireDAO();
+            lbnote.setText("Note : " + notDao.getNoteById(articleSelect.getId_article(),"article") + " /5");
             // MembreDao mdao = new MembreDao();
             System.out.println(articleSelect.getTitre());
             lb_titre.setText(articleSelect.getTitre());
             list.setItems(cdao.ListerCommentairesById(articleSelect.getId_article()));
         }
     }
-
     @Override
     public void SetScreenParent(ScreensController screenpage) {
         sc = screenpage;
@@ -141,25 +136,21 @@ public class CommentNoteController implements Initializable, ControlledScreen {
     private void noter(ActionEvent event) {
         note = Integer.parseInt(((RadioButton) x1.getSelectedToggle()).getText());
         if (eventSelect != null) {
-            System.out.println(notDao.verifierNote(loginController.membre.getId_membre(), "evenement", eventSelect.getId_evenement()));
             if (!notDao.verifierNote(loginController.membre.getId_membre(), "evenement", eventSelect.getId_evenement())) {
                 notDao.insererNote("evenement", note, loginController.membre.getId_membre(), eventSelect.getId_evenement());
             } else {
                 notDao.Updatenote("evenement", note, loginController.membre.getId_membre(), eventSelect.getId_evenement());
             }
-            lbnote.setText("Note : " + notDao.getNoteById(eventSelect.getId_evenement()) + " /5");
+            lbnote.setText("Note : " + notDao.getNoteById(eventSelect.getId_evenement(), "evenement") + " /5");
         } else if (articleSelect != null) {
-            System.out.println(notDao.verifierNote(loginController.membre.getId_membre(), "article", articleSelect.getId_article()));
             if (!notDao.verifierNote(loginController.membre.getId_membre(), "article", articleSelect.getId_article())) {
                 notDao.insererNote("article", note, loginController.membre.getId_membre(), articleSelect.getId_article());
             } else {
                 notDao.Updatenote("article", note, loginController.membre.getId_membre(), articleSelect.getId_article());
             }
-            lbnote.setText("Note : " + notDao.getNoteById(articleSelect.getId_article()) + " /5");
-            articleSelect.setNote_moy(notDao.getNoteById(articleSelect.getId_article()));
+            lbnote.setText("Note : " + notDao.getNoteById(articleSelect.getId_article(), "article") + " /5");
+            articleSelect.setNote_moy(notDao.getNoteById(articleSelect.getId_article(), "article"));
             adao.update(articleSelect);
         }
-
     }
-
 }

@@ -22,22 +22,19 @@ import tn.esprit.projet.util.Connexion;
  */
 public class NoteDAO {
 
-    public float getNoteById(int id) {
-
+    public float getNoteById(int id,String type) {
         Statement stmt;
         float result = 0;
         Connection cnx;
         ResultSet rs;
         try {
-
             cnx = Connexion.getInstance();
-            String query = "Select avg (nbr_etoiles) from note where id_evenement=" + id + " OR id_article=" + id + " OR id_film=" + id + " OR id_projection=" + id;
+            String query = "Select avg (nbr_etoiles) from note where id_"+type+"=" + id;
             stmt = cnx.createStatement();
             rs = stmt.executeQuery(query);
             while (rs.next()) {
                 result = rs.getFloat(1);
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(NoteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -45,7 +42,6 @@ public class NoteDAO {
         }
         return result;
     }
-
     public boolean insererNote(String type, int note, int id_membre, int id_type) {
         Statement stmt;
         boolean result = false;

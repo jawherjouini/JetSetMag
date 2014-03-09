@@ -47,6 +47,11 @@
                 <MenuItem mnemonicParsing="false" onAction="#goToStatistiques" text="Gérer" />
               </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Projections">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToProjections" text="Gérer" />
+              </items>
+            </Menu>
           </menus>
         </MenuBar>
       </children>
