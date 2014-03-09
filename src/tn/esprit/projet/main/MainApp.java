@@ -60,8 +60,6 @@ public class MainApp extends Application {
     public static String c_regarderfilmID = "regarderfilm";
     public static String c_regarderfilmFile =  "/tn/esprit/projet/view/client/RegarderFilm.fxml";
     
-    
-    
     public static String c_notercommenterID = "notercommenter";
     public static String c_notercommenterFile= "/tn/esprit/projet/view/client/CommentNote.fxml";
     

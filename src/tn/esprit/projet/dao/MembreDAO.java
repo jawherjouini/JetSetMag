@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package tn.esprit.projet.dao;
 
 import java.io.UnsupportedEncodingException;
@@ -8,9 +13,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.mail.MessagingException;
+import tn.esprit.projet.model.Article;
 import tn.esprit.projet.model.Membre;
 import tn.esprit.projet.util.Connexion;
 import tn.esprit.projet.util.MailClass;
@@ -19,7 +27,7 @@ import tn.esprit.projet.util.MailClass;
  *
  * @author acer
  */
-public class MembreDAO {
+public class MembreDao {
 
     String s = "";
 
@@ -29,7 +37,6 @@ public class MembreDAO {
         Connection cnx;
         ResultSet rs;
         String password = encryptPassword(pass);
-
         try {
             cnx = Connexion.getInstance();
             String query = "Select * from membre where username='" + username + "' and password='" + password + "'";
@@ -45,27 +52,43 @@ public class MembreDAO {
         }
         return result;
     }
-    
-    public Membre getMembre(String username) {
+
+    public Membre FindMembreById(String username, String pass) {
         Statement stmt;
-        Membre result = null;
         Connection cnx;
         ResultSet rs;
+        Membre membre = null;
         try {
             cnx = Connexion.getInstance();
-            String query = "Select * from membre where username='"+username+"'";
+            String query = "Select * from membre where username='" + username + "' and password='" + pass + "'";
             stmt = cnx.createStatement();
             rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                result = new Membre();
-                result.setId_membre(rs.getInt(1));
-                result.setUsername(rs.getString("username"));
+            if (rs.next()) {
+                System.out.println(rs.getInt(1));
+                membre = new Membre(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getBoolean(6));
             }
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Listage impossible: " + ex.getMessage());
         }
-        return result;
-        
+        return membre;
+    }
+
+    public int updateMembre(Membre membre) {
+        Statement stmt;
+        Connection cnx;
+        int rs = 0;
+        System.out.println(membre.toString());
+        try {
+            cnx = Connexion.getInstance();
+            String query = "Update membre set username='" + membre.getUsername() + "', password='" + membre.getPassword() + "', nom='" + membre.getNom() + "',email='" + membre.getEmail() + "' where id_membre=" + membre.getId_membre();
+            stmt = cnx.createStatement();
+            rs = stmt.executeUpdate(query);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Listage impossible: " + ex.getMessage());
+        }
+        return rs;
+
     }
 
     public ObservableList<Membre> ListerMembre() {
@@ -115,7 +138,7 @@ public class MembreDAO {
         return result;
     }
 
-    public boolean AjouterMembre(String nom, String user_name, String email) {
+    public boolean AjouterMembre(String nom, String user_name, String email) throws SQLException, ClassNotFoundException, UnsupportedEncodingException, MessagingException {
         Statement stmt;
         boolean result = false;
         Connection cnx;
@@ -127,26 +150,21 @@ public class MembreDAO {
         }
         String password = encryptPassword(pass);
         System.out.println(pass + " = " + password);
-        try {
-            cnx = Connexion.getInstance();
-            String query = "INSERT INTO membre (nom, username, password, email, isAdministrateur) VALUES ( '" + nom + "', '" + user_name + "', '" + password + "', '" + email + "',false);";
-            System.out.println("");
-            stmt = cnx.createStatement();
-            rs = stmt.executeUpdate(query);
-            if (rs > 0) {
-                result = true;
-            }
-            System.out.println(result);
-            MailClass a = new MailClass();
-            a.Setmail("JetSetMag inscrit", "Votre mot de passe est: " + pass + "\n Votre User_name: " + user_name);
-            a.SendMyMail("clientjetsetmag@gmail.com", email, "Administrateur", nom);
-            this.s = "";
-        } catch (SQLException | ClassNotFoundException ex) {
-            System.out.println(ex.getMessage());
-            this.s = "Ce user name est déja utilisé  ";
-        } catch (UnsupportedEncodingException | MessagingException ex) {
-            System.out.println("erreur mailing: "+ex.getMessage());
+
+        cnx = Connexion.getInstance();
+        String query = "INSERT INTO membre (nom, username, password, email, isAdministrateur) VALUES ( '" + nom + "', '" + user_name + "', '" + password + "', '" + email + "',false);";
+        System.out.println("");
+        stmt = cnx.createStatement();
+        rs = stmt.executeUpdate(query);
+        if (rs > 0) {
+            result = true;
         }
+        System.out.println("tttttttttttttttttttttttthis " + result);
+        MailClass a = new MailClass();
+        a.Setmail("JetSetMag inscrit", "Votre mot de passe est: " + pass + "\n Votre User_name: " + user_name);
+        a.SendMyMail("clientjetsetmag@gmail.com", email, "Administrateur", nom);
+        this.s = "";
+
         return result;
     }
 
@@ -168,5 +186,4 @@ public class MembreDAO {
         }
         return passwordEncoded;
     }
-
 }
