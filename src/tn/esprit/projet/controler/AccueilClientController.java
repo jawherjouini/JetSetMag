@@ -111,7 +111,7 @@ public class AccueilClientController implements Initializable, ControlledScreen 
 
     private void loading(String fxml) {
         try {
-
+            body1.getChildren().removeAll(lLoader);
             lLoader = FXMLLoader.load(getClass().getResource(fxml));
             body1.getChildren().add(lLoader);
         } catch (IOException ex) {
@@ -126,10 +126,12 @@ public class AccueilClientController implements Initializable, ControlledScreen 
 
     @FXML
     private void moveToBoxOffice(ActionEvent event) {
+       
 
         titre.setText("Box Office");
 
         changecolor(btnBoxOffice, "white", "black");
+        loading(MainApp.c_paccueilFile);
 
     }
 
