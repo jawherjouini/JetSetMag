@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.CommentNoteController">
+  <children>
+    <AnchorPane prefHeight="396.0" prefWidth="800.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <children>
+        <ListView fx:id="list" prefHeight="395.9999928379059" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="250.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="450.0">
+      <children>
+        <TextArea fx:id="ta_comm" prefHeight="82.0" prefWidth="760.0" promptText="Votre commentaire..." style="-fx-background-radius:10px;&#10;-fx-background-color:#ccedff;" wrapText="true" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+        <Button fx:id="btn_commenter" contentDisplay="CENTER" layoutX="353.0" mnemonicParsing="false" onAction="#commenter" prefWidth="119.0" text="Commenter" textFill="BLACK" AnchorPane.bottomAnchor="14.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <HBox id="HBox" alignment="CENTER" layoutY="10.0" prefHeight="26.0" prefWidth="770.0" spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0">
+      <children>
+        <Label id="lb_text" fx:id="lb_titre" prefWidth="412.0" text="Label">
+          <font>
+            <Font name="System Bold" size="14.0" />
+          </font>
+        </Label>
+        <Text id="lb_note" fx:id="lbnote" strokeType="OUTSIDE" strokeWidth="0.0" text="" HBox.hgrow="ALWAYS" />
+        <HBox id="HBox" fx:id="hbnote" alignment="BASELINE_CENTER" fillHeight="true" prefHeight="17.0" prefWidth="239.0" spacing="10.0">
+          <children>
+            <Label alignment="BASELINE_CENTER" prefWidth="95.200927734375" text="Votre note :">
+              <font>
+                <Font size="13.0" />
+              </font>
+            </Label>
+            <RadioButton fx:id="rd1" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#noter" text="1">
+              <toggleGroup>
+                <ToggleGroup fx:id="x1" />
+              </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rd2" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#noter" selected="false" text="2" toggleGroup="$x1" />
+            <RadioButton fx:id="rd3" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#noter" text="3" toggleGroup="$x1" />
+            <RadioButton fx:id="rd4" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#noter" text="4" toggleGroup="$x1" />
+            <RadioButton fx:id="rd5" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#noter" text="5" toggleGroup="$x1" />
+          </children>
+        </HBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>
