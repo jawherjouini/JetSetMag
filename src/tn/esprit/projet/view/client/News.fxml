@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.NewsController">
+  <children>
+    <AnchorPane id="" fx:id="left_pane" prefHeight="455.0" prefWidth="1200.0" style="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <TabPane prefHeight="455.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <tabs>
+            <Tab fx:id="tab_new" text="Les plus récents">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="600.0">
+                  <children>
+                    <ListView id="s" fx:id="ls_new" onMouseClicked="#recupererLigne" prefHeight="424.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab_lus" text="Les plus lus">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <ListView fx:id="ls_lus" onMouseClicked="#recupererLigne" prefHeight="424.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab_notes" text="Les mieux notés">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <ListView fx:id="ls_notes" onMouseClicked="#recupererLigne" prefHeight="424.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="right_pane" prefHeight="455.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label fx:id="lb_titre" layoutX="14.0" layoutY="11.0" prefHeight="16.0" prefWidth="442.0" text="titre" textFill="#310099">
+          <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+          </font>
+        </Label>
+        <Label fx:id="lb_date" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="380.0" layoutY="39.0" prefWidth="206.0" text="Label" textAlignment="RIGHT" textFill="#3385ff">
+          <font>
+            <Font name="Franklin Gothic Book Italic" size="12.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+    <WebView fx:id="wv_article" layoutX="600.0" layoutY="55.0" prefHeight="335.0" prefWidth="600.0" style="" />
+    <Hyperlink id="nt_com" fx:id="h_comm" layoutX="647.0" layoutY="404.0" onAction="#noterCommenter" text="Noter et/ou commenter" />
+    <Hyperlink id="invit" fx:id="h_inv" layoutX="1095.0" layoutY="404.0" onAction="#InviterAmi" text="Inviter un ami" />
+  </children>
+</AnchorPane>

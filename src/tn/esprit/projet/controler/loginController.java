@@ -58,7 +58,7 @@ public class loginController implements Initializable, ControlledScreen {
 
         if (membre != null) {
             if (membre.isIsAdministrateur()) {
-                screencontroller.setScreen(MainApp.screen3ID);
+                screencontroller.setScreen(MainApp.g_gestionallID);
 
             } else {
                 AccueilController.page=5;

@@ -18,7 +18,7 @@ import tn.esprit.projet.util.*;
 public class MainApp extends Application {
     
  
-    
+    //*****Administrateur*******//
     public static String g_commentaireID = "commentaire";
     public static String g_commentaireFile = "/tn/esprit/projet/view/admin/GestionCommentaire.fxml";
   
@@ -43,12 +43,21 @@ public class MainApp extends Application {
     public static String g_filmID = "film";
     public static String g_filmFile = "/tn/esprit/projet/view/admin/GestionFilm.fxml";
   
+   //************Client************************//
+    
+    public static String c_newsID = "news";
+    public static String c_newsFile =  "/tn/esprit/projet/view/client/News.fxml";
+    
+    public static String c_notercommenterID = "notercommenter";
+    public static String c_notercommenterFile= "/tn/esprit/projet/view/client/CommentNote.fxml";
+    
+    
+    
     public static String screen1ID = "Accueil";
     public static String screen1File = "/tn/esprit/projet/view/client/Accueil.fxml";
     public static String screen2ID = "login";
     public static String screen2File = "/tn/esprit/projet/view/client/login.fxml";
-    public static String screen3ID = "gestionnews";
-    public static String screen3File = "/tn/esprit/projet/view/admin/GestionNews.fxml";
+  
     public static String screen4ID = "map";
     public static String screen4File = "/tn/esprit/projet/view/client/Map.fxml";
     public static String screen5ID = "profil";
@@ -63,13 +72,11 @@ public class MainApp extends Application {
     public static String screen8ID = "CommentNote";
     public static String screen10File = "/tn/esprit/projet/view/client/ConsulterArticle.fxml";
     public static String screen10ID = "ConsulterArticle";
-    public static String screen11File = "/tn/esprit/projet/view/client/Film.fxml";
-    public static String screen11ID = "Film";
+ 
     public static String screen12File = "/tn/esprit/projet/view/client/InterfacedesProjections.fxml";
     public static String screen12ID = "InterfacesProjections";
     
-    public static String screen13File = "/tn/esprit/projet/view/admin/GestionFilm.fxml";
-    public static String screen13ID = "GestionFilm";
+
     
        public static ScreensController  mainCantainer;
     
@@ -78,20 +85,20 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
 
          mainCantainer = new ScreensController();
-//        mainCantainer.loadscreen(screen1ID, screen1File);
-//        mainCantainer.loadscreen(screen2ID, screen2File);
-//        mainCantainer.loadscreen(screen3ID, screen3File);
+         mainCantainer.loadscreen(screen1ID, screen1File);
+     mainCantainer.loadscreen(screen2ID, screen2File);
+     // mainCantainer.loadscreen(screen3ID, screen3File);
 //   //    mainCantainer.loadscreen(screen4ID, screen4File);
-//       // mainCantainer.loadscreen(screen5ID, screen5File);
-//       mainCantainer.loadscreen(screen7ID, screen7File);
+mainCantainer.loadscreen(screen5ID, screen5File);
+mainCantainer.loadscreen(screen7ID, screen7File);
 //       mainCantainer.loadscreen(screen10ID, screen10File);
        
-       mainCantainer.loadscreen(g_gestionallID,g_gestionallFile);
+     //  mainCantainer.loadscreen(g_gestionallID,g_gestionallFile);
      //  mainCantainer.loadscreen(g_sallecinemaID,g_sallecinemmaFile);
        
-     //  mainCantainer.loadscreen(screen11ID, screen11File);
+     mainCantainer.loadscreen(screen1ID, screen1File);
  
-        mainCantainer.setScreen(MainApp.g_gestionallID);
+        mainCantainer.setScreen(MainApp.screen1ID);
         Group root = new Group();
         root.getChildren().addAll(mainCantainer);
 

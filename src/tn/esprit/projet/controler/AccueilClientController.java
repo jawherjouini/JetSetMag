@@ -81,11 +81,14 @@ public class AccueilClientController implements Initializable, ControlledScreen 
         if (AccueilController.page == 1) {
             titre.setText("Box Office");
             changecolor(btnBoxOffice, "white", "black");
-            loading(MainApp.screen11File);
+//            loading(MainApp.screen11File);
         }
         if (AccueilController.page == 2) {
             titre.setText("News");
             changecolor(btnNews, "white", "black");
+            System.out.println("avant");
+            loading(MainApp.c_newsFile);
+            System.out.println("aprés");
         }
         if (AccueilController.page == 3) {
             titre.setText("Events");
@@ -134,6 +137,7 @@ public class AccueilClientController implements Initializable, ControlledScreen 
     private void moveToNews(ActionEvent event) {
         titre.setText("News");
         changecolor(btnNews, "white", "black");
+        loading(MainApp.c_newsFile);
     }
 
     @FXML

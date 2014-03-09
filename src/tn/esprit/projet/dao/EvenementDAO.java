@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import tn.esprit.projet.controler.loginController;
@@ -17,6 +16,38 @@ import tn.esprit.projet.util.Connexion;
  * @author Chaker
  */
 public class EvenementDAO {
+    
+    public ObservableList<Evenement> ListerBonsPlans() {
+        Statement stmt;
+        ObservableList<Evenement> result = null;
+        Connection cnx;
+        ResultSet rs;
+        try {
+            
+            result = FXCollections.observableArrayList();
+            cnx = Connexion.getInstance();
+            String query = "SELECT * FROM evenement WHERE bon_plan=TRUE ORDER BY date_deb_event LIMIT 6";
+            stmt = cnx.createStatement();
+            rs = stmt.executeQuery(query);
+            
+            while (rs.next()) {
+                Evenement e = new Evenement();
+                e.setId_evenement(rs.getInt("id_evenement"));
+                e.setTitre_event(rs.getString("titre_event"));
+                e.setBon_plan(rs.getBoolean("bon_plan"));
+                e.setDate_deb_event(rs.getString("date_deb_event"));
+                e.setDate_fin_event(rs.getString("date_fin_event"));
+                e.setType_event(rs.getString("type_event"));
+                e.setDescription(rs.getString("description"));
+                
+                result.add(e);
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Listage impossible: " + ex.getMessage());
+        }
+        return result;
+    }
+    
     
     public ObservableList<Evenement> ListerEvenements() {
         Statement stmt;
@@ -116,14 +147,13 @@ public class EvenementDAO {
             cnx = Connexion.getInstance();
             String query = "INSERT INTO evenement "
                     + "(date_deb_event, date_fin_event, type_event, bon_plan, "
-                    + "titre_event, description,id_membre) "
-                    + "VALUES ('"+Timestamp.valueOf(evenement.getDate_deb_event())+"','"
-                    + Timestamp.valueOf(evenement.getDate_fin_event())+"','"
+                    + "titre_event, description) "
+                    + "VALUES ('"+evenement.getDate_deb_event()+"','"
+                    + evenement.getDate_fin_event()+"','"
                     + evenement.getType_event()+"',"
                     + bp +",'"
                     + evenement.getTitre_event()+"','"
-                    + evenement.getDescription()+"','"
-                    + evenement.getId_membre()+"');";
+                    + evenement.getDescription()+"');";
             stmt = cnx.createStatement();
             int rs = stmt.executeUpdate(query);
         } catch (SQLException | ClassNotFoundException ex) {
@@ -186,7 +216,7 @@ public class EvenementDAO {
         }
         
     }
-    public ObservableList<Evenement> findEventsByID(){
+     public ObservableList<Evenement> findEventsByID(){
         Statement stmt;
         ObservableList<Evenement> result = null;
         Connection cnx;
@@ -218,3 +248,4 @@ public class EvenementDAO {
     }
     
 }
+

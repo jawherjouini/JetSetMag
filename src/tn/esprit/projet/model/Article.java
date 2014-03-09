@@ -9,7 +9,7 @@ public class Article {
     private int id_article;
     private String titre;
     private String texte;
-    private int note_moy;
+    private float note_moy;
     private int nbr_visite;
     private String date_redaction;
 
@@ -18,7 +18,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" + "id_article=" + id_article + ", titre=" + titre + ", texte=" + texte + ", note_moy=" + note_moy + ", nbr_visite=" + nbr_visite + ", date_redaction=" + date_redaction + '}';
+        return date_redaction.substring(0, 10)+ " | lu : "+ nbr_visite+ " fois et noté: "+note_moy+"/5 | "+titre;
     }
 
     public int getId_article() {
@@ -45,11 +45,11 @@ public class Article {
         this.texte = texte;
     }
 
-    public int getNote_moy() {
+    public float getNote_moy() {
         return note_moy;
     }
 
-    public void setNote_moy(int note_moy) {
+    public void setNote_moy(float note_moy) {
         this.note_moy = note_moy;
     }
 

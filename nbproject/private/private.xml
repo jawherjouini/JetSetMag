@@ -11,6 +11,9 @@
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/dao/FilmDao.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/model/Film.java</file>
             <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/GestionFilmController.java</file>
+            <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/util/FileUpload.java</file>
+            <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/FilmController.java</file>
+            <file>file:/home/oukhay/NetBeansProjects/JetSetMag/src/tn/esprit/projet/controler/AjoutEvenementController.java</file>
         </group>
     </open-files>
 </project-private>

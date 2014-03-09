@@ -39,6 +39,7 @@ import tn.esprit.projet.model.Evenement;
 import tn.esprit.projet.util.ControlledScreen;
 import tn.esprit.projet.util.MailClass;
 import tn.esprit.projet.util.ScreensController;
+import static tn.esprit.projet.controler.NewsController.articleSelect;
 
 /**
  * FXML Controller class
@@ -48,7 +49,7 @@ import tn.esprit.projet.util.ScreensController;
 public class SoireeController implements Initializable, ControlledScreen {
 
     EvenementDAO eventDao = new EvenementDAO();
-    public static Evenement eventSelect ;
+    public static Evenement eventSelect;
     ScreensController screentbal;
     ObservableList<String> list = FXCollections.observableArrayList();
     
@@ -84,11 +85,10 @@ public class SoireeController implements Initializable, ControlledScreen {
     @FXML
     private void afficherEvent(MouseEvent event) {
         String s = ls_events.getSelectionModel().getSelectedItem().substring(38);
-       
         eventSelect = eventDao.ListerEvenementsByTitre(s).get(0);
-        System.out.println(eventSelect);
+        articleSelect = null;
 
-        wv_content.getEngine().loadContent("<div style=\"font-family:Verdana, Geneva, sans-serif; background:#ccedff;width:610px;height:453px\">\n"
+        wv_content.getEngine().loadContent("<div style=\"font-family:Verdana, Geneva, sans-serif; background:#FCC;width:610px;height:453px\">\n"
                 + "    	<br/><h3 style=\"margin:10px;color:#FFF\">" + eventSelect.getTitre_event() + "</h3><p style=\"margin:10px;float:right;font-size:9px\">Début: " + eventSelect.getDate_deb_event().substring(0, 16) + " - Fin:" + eventSelect.getDate_fin_event().substring(0, 16) + "</p><br/>\n"
                 + "        <p style=\"margin:10px;color:#000;font-size:14px\">" + eventSelect.getDescription() + "</p>\n"
                 + "    </div>");
@@ -101,11 +101,10 @@ public class SoireeController implements Initializable, ControlledScreen {
 
     @FXML
     private void noterCommenter(ActionEvent event) {
-        
         Stage stage = new Stage();
         if (eventSelect != null) {
             try {
-                Parent root = FXMLLoader.load(getClass().getResource(MainApp.screen8File));
+                Parent root = FXMLLoader.load(getClass().getResource(MainApp.c_notercommenterFile));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();

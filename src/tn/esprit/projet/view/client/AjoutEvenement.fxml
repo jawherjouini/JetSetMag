@@ -51,7 +51,7 @@
             <URL value="@../../media/AccueilClient.css" />
           </stylesheets>
         </ComboBox>
-        <Label font="$x1" text="Image" textFill="$x3" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label font="$x1" text="Image URL :" textFill="$x3" GridPane.columnIndex="0" GridPane.rowIndex="5" />
         <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <children>
             <TextField id="tf_date_deb" fx:id="tf_annee_deb" minWidth="-Infinity" prefWidth="56.0" promptText="année" />
@@ -73,19 +73,19 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <TextField fx:id="tf_heure" prefWidth="34.0" />
+            <TextField id="tf_heure" fx:id="tf_heure_deb" prefWidth="34.0" />
             <Label prefWidth="8.9998779296875" text=":" textFill="WHITE">
               <font>
                 <Font size="16.0" fx:id="x4" />
               </font>
             </Label>
-            <TextField prefWidth="34.0" />
+            <TextField fx:id="tf_min_deb" prefWidth="34.0" />
           </children>
         </HBox>
         <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="277.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
           <children>
             <TextField id="tf_date_deb" fx:id="tf_annee_fin" minWidth="-Infinity" prefWidth="56.0" promptText="année" />
-            <ComboBox minWidth="34.0" prefWidth="34.0">
+            <ComboBox fx:id="cb_mois_fin" minWidth="34.0" prefWidth="34.0">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Item 1" />
@@ -94,7 +94,7 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <ComboBox minWidth="34.0" prefWidth="34.0">
+            <ComboBox fx:id="cb_jour_fin" minWidth="34.0" prefWidth="34.0">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Item 1" />
@@ -103,11 +103,12 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <TextField prefWidth="34.0" />
+            <TextField fx:id="tf_heure_fin" prefWidth="34.0" />
             <Label font="$x4" prefWidth="8.9998779296875" text=":" textFill="WHITE" />
-            <TextField prefWidth="34.0" />
+            <TextField fx:id="tf_min_fin" prefWidth="34.0" />
           </children>
         </HBox>
+        <TextField fx:id="tf_img" prefWidth="200.0" promptText="http://" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="0.0" prefWidth="223.0" />
@@ -124,5 +125,6 @@
     </GridPane>
     <Button layoutX="259.0" layoutY="386.0" mnemonicParsing="false" onAction="#ajouterEvent" prefWidth="112.0" text="Ajouter" />
     <Button layoutX="383.0" layoutY="386.0" mnemonicParsing="false" onAction="#effacerTout" prefWidth="112.0" text="Effacer" />
+    <Button layoutX="586.0" layoutY="333.0" mnemonicParsing="false" onAction="#choisirImage" text="Upload" />
   </children>
 </AnchorPane>
