@@ -37,22 +37,18 @@ public class CommonDAO {
         ObservableList<Object[]> liste = FXCollections.observableArrayList();
         Object[] row;
         try {
-
             cnx = Connexion.getInstance();
             stmt = cnx.createStatement();
             String req = "Select * from " + tablename;
             rs = stmt.executeQuery(req);
             ResultSetMetaData rsmd = rs.getMetaData();
-
             while (rs.next()) {
                 row = new Object[rsmd.getColumnCount()];
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                     row[i - 1] = rs.getObject(i);
-
                 }
                 liste.add(row);
             }
-
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Listage impossible: " + ex.getMessage());
         }
@@ -80,9 +76,8 @@ public class CommonDAO {
     public void genererRapport(String table) {
         try {
             cnx = Connexion.getInstance();
-            JasperDesign jasperDesign;
-            jasperDesign = JRXmlLoader.load(this.getClass()
-                    .getResourceAsStream("/tn/esprit/projet/media/jrxml/"+table+".jrxml"));
+            System.out.println(new File("").getAbsolutePath()+"\\tn\\esprit\\projet\\media\\jrxml\\"+table+".jrxml");
+            JasperDesign jasperDesign = JRXmlLoader.load(new File("").getAbsolutePath()+"\\tn\\esprit\\projet\\media\\jrxml\\"+table+".jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
             // - Paramètres à envoyer au rapport
             Map parameters = new HashMap();

@@ -36,10 +36,10 @@ public class MembreDao {
         int result = 0;
         Connection cnx;
         ResultSet rs;
-
+        String password = encryptPassword(pass);
         try {
             cnx = Connexion.getInstance();
-            String query = "Select * from membre where username='" + username + "' and password='" + pass + "'";
+            String query = "Select * from membre where username='" + username + "' and password='" + password + "'";
             stmt = cnx.createStatement();
             rs = stmt.executeQuery(query);
             if (rs.next()) {
@@ -58,7 +58,6 @@ public class MembreDao {
         Connection cnx;
         ResultSet rs;
         Membre membre = null;
-
         try {
             cnx = Connexion.getInstance();
             String query = "Select * from membre where username='" + username + "' and password='" + pass + "'";
@@ -68,7 +67,6 @@ public class MembreDao {
                 System.out.println(rs.getInt(1));
                 membre = new Membre(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getBoolean(6));
             }
-
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Listage impossible: " + ex.getMessage());
         }
@@ -80,7 +78,6 @@ public class MembreDao {
         Connection cnx;
         int rs = 0;
         System.out.println(membre.toString());
-
         try {
             cnx = Connexion.getInstance();
             String query = "Update membre set username='" + membre.getUsername() + "', password='" + membre.getPassword() + "', nom='" + membre.getNom() + "',email='" + membre.getEmail() + "' where id_membre=" + membre.getId_membre();

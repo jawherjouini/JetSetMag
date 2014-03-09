@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.BonsPlansController">
+  <children>
+    <GridPane fx:id="gr_plans" prefHeight="455.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <WebView fx:id="wv_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <GridPane.margin>
+            <Insets left="150.0" fx:id="x1" />
+          </GridPane.margin>
+        </WebView>
+        <WebView fx:id="wv_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1" />
+        <WebView fx:id="wv_5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="2" />
+        <WebView fx:id="wv_6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="2" />
+        <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+          <GridPane.margin>
+            <Insets right="450.0" fx:id="x2" />
+          </GridPane.margin>
+        </ImageView>
+        <WebView fx:id="wv_1" prefHeight="152.0" prefWidth="359.0" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
+        <ImageView id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.margin="$x2" GridPane.rowIndex="0">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+        </ImageView>
+        <WebView id="wv_1" fx:id="wv_2" prefHeight="152.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+        <ImageView id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.margin="$x2" GridPane.rowIndex="1">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+        </ImageView>
+        <ImageView id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.margin="$x2" GridPane.rowIndex="2">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+        </ImageView>
+        <ImageView id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.margin="$x2" GridPane.rowIndex="2">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+        </ImageView>
+        <ImageView id="img" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.margin="$x2" GridPane.rowIndex="1">
+          <image>
+            <Image url="@../../media/b_plan.png" />
+          </image>
+        </ImageView>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>
