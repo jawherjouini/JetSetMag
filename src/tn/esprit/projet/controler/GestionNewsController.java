@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tn.esprit.projet.controler;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -12,15 +8,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.HTMLEditor;
 import tn.esprit.projet.dao.ArticleDAO;
 import tn.esprit.projet.dao.CommonDAO;
+import tn.esprit.projet.main.MainApp;
 import tn.esprit.projet.model.Article;
 import tn.esprit.projet.util.ControlledScreen;
 import tn.esprit.projet.util.ScreensController;
@@ -39,8 +39,6 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     private TableView<Article> tab;
     @FXML
     private Button btn_deltt;
-    CommonDAO cdao = new CommonDAO();
-    ArticleDAO adao = new ArticleDAO();
     @FXML
     private Tab onglet_consult;
     @FXML
@@ -61,6 +59,32 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     private TextField tf_id;
     @FXML
     private TextField tf_titre_mod;
+    @FXML
+    private Button btn_mod;
+    @FXML
+    private Button btn_valid;
+
+    CommonDAO cdao = new CommonDAO();
+    ArticleDAO adao = new ArticleDAO();
+    Article a;
+    @FXML
+    private TabPane tabpane;
+    @FXML
+    private ImageView header;
+    @FXML
+    private Button btn_pdf;
+    @FXML
+    private MenuItem g_film;
+    @FXML
+    private MenuItem g_events;
+    @FXML
+    private MenuItem g_membre;
+    @FXML
+    private MenuItem g_salle;
+    @FXML
+    private MenuItem g_commentaire;
+    @FXML
+    private MenuItem g_statistiques;
 
     /**
      * Initializes the controller class.
@@ -68,6 +92,8 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         charger();
+        String path = new File("").getAbsolutePath();
+        System.out.println(path);
     }
 
     public void charger() {
@@ -79,9 +105,6 @@ public class GestionNewsController implements Initializable, ControlledScreen {
             t.setMaxWidth(200);
             tab.getColumns().add(t);
         }
-//        ObservableList<Object[]> items = cdao.finAll("article");
-//        System.out.println(items.toString());
-//        tab.getItems().setAll(items);
         ObservableList<Article> items = adao.ListerArticles();
         tab.setItems(items);
     }
@@ -93,25 +116,93 @@ public class GestionNewsController implements Initializable, ControlledScreen {
 
     @FXML
     private void supprimerLigne(ActionEvent event) {
-        TableView.TableViewFocusModel model = tab.getFocusModel();
-        System.out.println(model.getFocusedItem());
-        adao.deleteByElement((Article) model.getFocusedItem());
-        charger();
+        try {
+            TableView.TableViewFocusModel model = tab.getFocusModel();
+            adao.deleteByElement((Article) model.getFocusedItem());
+            charger();
+        } catch (Exception e) {
+            System.out.println("erreur: " + e.getMessage());
+        }
     }
 
     @FXML
     private void supprimerTout(ActionEvent event) {
-        adao.delete();
-        charger();
+        try {
+            adao.delete();
+            charger();
+        } catch (Exception e) {
+            System.out.println("erreur: " + e.getMessage());
+        }
     }
 
     @FXML
     private void ajouterArticle(ActionEvent event) {
-        Article a = new Article();
+        a = new Article();
         a.setTitre(tf_titre.getText());
-        a.setTexte(html_text.getHtmlText().replaceAll("\"", ""));
-        System.out.println(a.getTexte());
+        a.setTexte(html_text.getHtmlText().replaceAll("'", "§"));
         adao.add(a);
+        System.out.println("a.gettext ajout " + a.getTexte());
         charger();
+        tabpane.getSelectionModel().select(onglet_consult);
+    }
+
+    @FXML
+    private void chargerModif(ActionEvent event) {
+        tabpane.getSelectionModel().select(onglet_modif);
+
+        TableView.TableViewFocusModel model = tab.getFocusModel();
+        a = (Article) model.getFocusedItem();
+        tf_id.setText(String.valueOf(a.getId_article()));
+        tf_id.setDisable(true);
+        tf_titre_mod.setText(a.getTitre());
+        html_text_mod.setHtmlText(a.getTexte().replaceAll("§", "'"));
+        System.out.println("htmltextmod " + html_text_mod.getHtmlText());
+    }
+
+    @FXML
+    private void modifierArticle(ActionEvent event) {
+        a = new Article();
+        a.setId_article(Integer.parseInt(tf_id.getText()));
+        a.setTitre(tf_titre_mod.getText());
+        a.setTexte(html_text_mod.getHtmlText().replaceAll("'", "§"));
+        System.out.println("a.gettext modif " + a.getTexte());
+        adao.update(a);
+        charger();
+        tabpane.getSelectionModel().select(onglet_consult);
+    }
+
+    @FXML
+    private void genererRapportArticle(ActionEvent event) {
+        cdao.genererRapport("article");
+    }
+
+    @FXML
+    private void goToFilm(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToEvents(ActionEvent event) {
+        MainApp.mainCantainer.loadscreen(MainApp.g_evenementID, MainApp.g_evenementFile);
+        screencontroller.setScreen(MainApp.g_evenementID);
+    }
+
+    @FXML
+    private void goToMembre(ActionEvent event) {
+         MainApp.mainCantainer.loadscreen(MainApp.g_membreID, MainApp.g_membreFile);
+          screencontroller.setScreen(MainApp.g_membreID);
+    }
+
+    @FXML
+    private void goToSalle(ActionEvent event) {
+    }
+
+    @FXML
+    private void goToCommentaire(ActionEvent event) {
+        MainApp.mainCantainer.loadscreen(MainApp.g_commentaireID, MainApp.g_commentaireFile);
+        screencontroller.setScreen(MainApp.g_commentaireID);
+    }
+
+    @FXML
+    private void goTostatistques(ActionEvent event) {
     }
 }

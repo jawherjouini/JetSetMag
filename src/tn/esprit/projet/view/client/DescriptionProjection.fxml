@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="576.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.DescriptionProjectionController">
+  <children>
+    <AnchorPane id="AnchorPane" fx:id="anchP" layoutX="0.0" layoutY="94.0" prefHeight="482.0" prefWidth="1024.0" style="-fx-background-color:black;" visible="false">
+      <children>
+        <WebView fx:id="webview" layoutX="512.0" layoutY="40.0" prefHeight="200.0" prefWidth="467.0" />
+        <Label id="titre" fx:id="lblNom" layoutX="52.0" layoutY="25.0" prefHeight="29.0" prefWidth="154.0" text="Label" textFill="WHITE">
+          <font>
+            <Font size="18.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Pane layoutX="223.0" layoutY="241.0" prefHeight="200.0" prefWidth="655.0" />
+        <Label id="descrip" font="$x1" layoutX="52.0" layoutY="251.0" prefWidth="133.0" text="Description" textFill="WHITE" />
+        <Label fx:id="lblDesc" layoutX="52.0" layoutY="276.0" prefHeight="105.0" prefWidth="619.0" text="Label">
+          <textFill>
+            <Color blue="0.875" green="0.875" red="0.875" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Label id="horaire" font="$x1" layoutX="52.0" layoutY="410.0" prefWidth="133.0" text="Horaires" textFill="WHITE" />
+        <Label fx:id="lblDateH" layoutX="166.0" layoutY="402.0" prefHeight="36.9609375" prefWidth="528.0" text="Label" textFill="$x2" />
+        <ImageView fx:id="imgview" fitHeight="180.0" fitWidth="240.0" layoutX="65.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+    </AnchorPane>
+    <BorderPane prefHeight="576.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+        <Pane prefHeight="119.0" prefWidth="1024.0" />
+      </top>
+    </BorderPane>
+    <VBox id="VboxProjection" fx:id="MyVbox" layoutX="0.0" layoutY="94.0" prefHeight="482.0" prefWidth="1024.0" visible="true" />
+  </children>
+</AnchorPane>

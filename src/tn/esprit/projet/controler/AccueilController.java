@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package tn.esprit.projet.controler;
 
 import java.net.URL;
@@ -14,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import tn.esprit.projet.main.MainApp;
@@ -25,7 +25,10 @@ import tn.esprit.projet.util.ScreensController;
  *
  * @author Jawher
  */
-public class AccueilController implements Initializable,ControlledScreen {
+public class AccueilController implements Initializable, ControlledScreen {
+
+    public static int page = 0;
+
     ScreensController screencontroller;
     @FXML
     private Color x1;
@@ -34,9 +37,9 @@ public class AccueilController implements Initializable,ControlledScreen {
     @FXML
     private Button bon;
     @FXML
-    private Font x4;
-    @FXML
     private Hyperlink connecter;
+    @FXML
+    private Font x4;
     @FXML
     private Color x3;
     @FXML
@@ -46,12 +49,8 @@ public class AccueilController implements Initializable,ControlledScreen {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {            
-             
-    }    
+    public void initialize(URL url, ResourceBundle rb) {
 
-    @FXML
-    private void bonplan(ActionEvent event) {
     }
 
     @FXML
@@ -59,9 +58,44 @@ public class AccueilController implements Initializable,ControlledScreen {
         screencontroller.setScreen(MainApp.screen2ID);
     }
 
+    @FXML
+    private void accueilBoxOffice(ActionEvent event) {
+        page = 1;
+        MainApp.mainCantainer.loadscreen(MainApp.screen5ID, MainApp.screen5File);
+        screencontroller.setScreen(MainApp.screen5ID);
+    }
+
+    @FXML
+    private void accueilNews(ActionEvent event) {
+        page = 2;
+        MainApp.mainCantainer.loadscreen(MainApp.screen5ID, MainApp.screen5File);
+        screencontroller.setScreen(MainApp.screen5ID);
+    }
+
+    @FXML
+    private void accueilEvents(ActionEvent event) {
+        page = 3;
+        MainApp.mainCantainer.loadscreen(MainApp.screen5ID, MainApp.screen5File);
+        screencontroller.setScreen(MainApp.screen5ID);
+    }
+
+    @FXML
+    private void accueilBonsPlans(ActionEvent event) {
+        page = 4;
+        MainApp.mainCantainer.loadscreen(MainApp.screen5ID, MainApp.screen5File);
+        screencontroller.setScreen(MainApp.screen5ID);
+    }
+
+    @FXML
+    private void inscrire(ActionEvent event) {
+
+        MainApp.mainCantainer.loadscreen(MainApp.screen6ID, MainApp.screen6File);
+        screencontroller.setScreen(MainApp.screen6ID);
+    }
+
     @Override
     public void SetScreenParent(ScreensController screenpage) {
-        screencontroller=screenpage;
+        screencontroller = screenpage;
     }
-    
+
 }

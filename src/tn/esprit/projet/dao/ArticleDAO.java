@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tn.esprit.projet.dao;
 
 import java.sql.Connection;
@@ -52,7 +48,6 @@ public class ArticleDAO {
         boolean result = false;
         Connection cnx;
         int rs;
-
         try {
             cnx = Connexion.getInstance();
             String query = "delete from article where id_article=" + a.getId_article();
@@ -74,7 +69,6 @@ public class ArticleDAO {
         boolean result = false;
         Connection cnx;
         int rs;
-
         try {
             cnx = Connexion.getInstance();
             String query = "delete from article";
@@ -98,7 +92,11 @@ public class ArticleDAO {
         int rs;
         try {
             cnx = Connexion.getInstance();
-            String query = "insert into article (titre,texte,note_moy,nbr_visite) values (\"" + a.getTitre() + "\",\"" + a.getTexte() + "\"," + a.getNote_moy() + "," + a.getNbr_visite() + ")";
+            String titre=a.getTitre();
+            String texte= a.getTexte();
+            int note = a.getNote_moy();
+            int nbr = a.getNbr_visite();
+            String query = "insert into article (titre,texte,note_moy,nbr_visite) values ('"+titre+ "','" + texte + "'," + note + "," + nbr + ")";
             stmt = cnx.createStatement();
             rs = stmt.executeUpdate(query);
 
@@ -113,4 +111,28 @@ public class ArticleDAO {
         return result;
     }
 
+    public boolean update(Article a) {
+        Statement stmt;
+        boolean result = false;
+        Connection cnx;
+        int rs;
+        try {
+            cnx = Connexion.getInstance();
+            String titre=a.getTitre();
+            String texte= a.getTexte();
+            int id = a.getId_article();
+            String query = "update article set titre='"+titre+"', texte= '"+texte+"' where id_article="+id;
+            System.out.println(query);
+            stmt = cnx.createStatement();
+            rs = stmt.executeUpdate(query);
+            if (rs > 0) {
+                result = true;
+            }
+            System.out.println(result);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Modification impossible: " + ex.getMessage());
+        }
+        return result;
+    }
 }

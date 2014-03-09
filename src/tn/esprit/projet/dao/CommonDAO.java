@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tn.esprit.projet.dao;
 
-import java.sql.Connection;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -15,6 +11,17 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import tn.esprit.projet.util.Connexion;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  *
@@ -68,5 +75,26 @@ public class CommonDAO {
             System.out.println("Listage de colonnes impossible: " + e.getMessage());
         }
         return nom;
+    }
+
+    public void genererRapport(String table) {
+        try {
+            cnx = Connexion.getInstance();
+            JasperDesign jasperDesign;
+            jasperDesign = JRXmlLoader.load(this.getClass()
+                    .getResourceAsStream("/tn/esprit/projet/media/jrxml/"+table+".jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+            // - Paramètres à envoyer au rapport
+            Map parameters = new HashMap();
+            parameters.put("Title", "Title");
+            // - Execution du rapport
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, cnx);
+            // - Création du rapport au format PDF
+            new File("C:\\JetSetMag_Report\\").mkdirs();
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\JetSetMag_Report\\"+table+"Report.pdf");
+        } catch (JRException | SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
     }
 }

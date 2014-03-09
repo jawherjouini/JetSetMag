@@ -16,23 +16,82 @@ import tn.esprit.projet.util.*;
  * @author oukhay
  */
 public class MainApp extends Application {
+    
  
+    
+    public static String g_commentaireID = "commentaire";
+    public static String g_commentaireFile = "/tn/esprit/projet/view/admin/GestionCommentaire.fxml";
+  
+    public static String g_evenementID = "evenement";
+    public static String g_evenementFile = "/tn/esprit/projet/view/admin/GestionEvenements.fxml";
+  
+    public static String g_membreID = "membre";
+    public static String g_membreFile = "/tn/esprit/projet/view/admin/GestionMembre.fxml";
+  
+    public static String g_newsID = "news";
+    public static String g_newsFile = "/tn/esprit/projet/view/admin/GestionNews.fxml";
+  
+    public static String g_sallecinemaID = "sallecinema";
+    public static String g_sallecinemmaFile = "/tn/esprit/projet/view/admin/GestionSalleCinema.fxml";
+  
+    public static String g_gestionallID = "gestionall";
+    public static String g_gestionallFile = "/tn/esprit/projet/view/admin/GestionAll.fxml";
 
+    public static String g_statistiqueID = "statistique";
+    public static String g_statistiqueFile = "/tn/esprit/projet/view/admin/Statistique.fxml";
+  
+    public static String g_filmID = "film";
+    public static String g_filmFile = "/tn/esprit/projet/view/admin/GestionFilm.fxml";
+  
     public static String screen1ID = "Accueil";
     public static String screen1File = "/tn/esprit/projet/view/client/Accueil.fxml";
     public static String screen2ID = "login";
     public static String screen2File = "/tn/esprit/projet/view/client/login.fxml";
     public static String screen3ID = "gestionnews";
     public static String screen3File = "/tn/esprit/projet/view/admin/GestionNews.fxml";
+    public static String screen4ID = "map";
+    public static String screen4File = "/tn/esprit/projet/view/client/Map.fxml";
+    public static String screen5ID = "profil";
+    public static String screen5File = "/tn/esprit/projet/view/client/AccueilClient.fxml";
+    public static String screen9ID = "Accueilprofil";
+    public static String screen9File = "/tn/esprit/projet/view/client/Accueilprofil.fxml";
+    public static String screen6ID = "inscription";
+    public static String screen6File = "/tn/esprit/projet/view/client/inscription.fxml";
+    public static String screen7File = "/tn/esprit/projet/view/client/soiree.fxml";
+    public static String screen7ID = "soiree";
+    public static String screen8File = "/tn/esprit/projet/view/client/CommentNote.fxml";
+    public static String screen8ID = "CommentNote";
+    public static String screen10File = "/tn/esprit/projet/view/client/ConsulterArticle.fxml";
+    public static String screen10ID = "ConsulterArticle";
+    public static String screen11File = "/tn/esprit/projet/view/client/Film.fxml";
+    public static String screen11ID = "Film";
+    public static String screen12File = "/tn/esprit/projet/view/client/InterfacedesProjections.fxml";
+    public static String screen12ID = "InterfacesProjections";
+    
+    public static String screen13File = "/tn/esprit/projet/view/admin/GestionFilm.fxml";
+    public static String screen13ID = "GestionFilm";
+    
+       public static ScreensController  mainCantainer;
+    
 
     @Override
     public void start(Stage primaryStage) {
 
-        ScreensController mainCantainer = new ScreensController();
-        mainCantainer.loadscreen(screen1ID, screen1File);
-        mainCantainer.loadscreen(screen2ID, screen2File);
-        mainCantainer.loadscreen(screen3ID, screen3File);
-        mainCantainer.setScreen(MainApp.screen1ID);
+         mainCantainer = new ScreensController();
+//        mainCantainer.loadscreen(screen1ID, screen1File);
+//        mainCantainer.loadscreen(screen2ID, screen2File);
+//        mainCantainer.loadscreen(screen3ID, screen3File);
+//   //    mainCantainer.loadscreen(screen4ID, screen4File);
+//       // mainCantainer.loadscreen(screen5ID, screen5File);
+//       mainCantainer.loadscreen(screen7ID, screen7File);
+//       mainCantainer.loadscreen(screen10ID, screen10File);
+       
+       mainCantainer.loadscreen(g_gestionallID,g_gestionallFile);
+     //  mainCantainer.loadscreen(g_sallecinemaID,g_sallecinemmaFile);
+       
+     //  mainCantainer.loadscreen(screen11ID, screen11File);
+ 
+        mainCantainer.setScreen(MainApp.g_gestionallID);
         Group root = new Group();
         root.getChildren().addAll(mainCantainer);
 

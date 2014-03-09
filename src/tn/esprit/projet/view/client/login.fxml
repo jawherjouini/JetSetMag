@@ -8,19 +8,19 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="576.0" prefWidth="1024.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.loginController">
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1200.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.loginController">
   <children>
     <AnchorPane id="anchorPane2" prefHeight="326.0" prefWidth="500.0" styleClass="top-segment" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+        <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="400.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
           <children>
-            <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
+            <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0" VBox.vgrow="NEVER">
               <children>
                 <Label id="label1" layoutX="14.0" layoutY="67.0" text="Username" />
                 <TextField id="textField1" fx:id="tfuser" layoutY="86.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
                 <Label id="label1" layoutX="14.0" layoutY="139.0" text="Password" />
                 <PasswordField id="passwordField1" fx:id="tfpassword" layoutY="157.0" prefWidth="415.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
-                <ImageView id="app-login-logo" layoutY="-12.0">
+                <ImageView id="app-login-logo" fx:id="logo" layoutY="-12.0" onMouseClicked="#goToHome">
                   <image>
                     <Image url="@../../media/LoginLogo.png" preserveRatio="true" smooth="true" />
                   </image>
@@ -31,13 +31,9 @@
         </VBox>
       </children>
     </AnchorPane>
-    <Button id="button1" fx:id="btn" defaultButton="true" onAction="#processLogin" prefHeight="70.0" prefWidth="420.0" text="Login" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="88.5" AnchorPane.rightAnchor="91.5" />
-    <HBox id="hBox1" alignment="CENTER" layoutY="301.0" prefHeight="25.0" prefWidth="418.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="91.0">
-      <children>
-        <Label id="label2" prefHeight="17.0" />
-      </children>
-    </HBox>
-    <Label fx:id="verif" contentDisplay="CENTER" layoutX="372.0" layoutY="432.0" prefWidth="280.0" text="" />
+    <Button id="button1" fx:id="btn" defaultButton="true" onAction="#processLogin" prefHeight="70.0" prefWidth="400.0" text="Login" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="395.0" />
+    <HBox id="hBox1" alignment="CENTER" layoutY="301.0" prefHeight="25.0" prefWidth="418.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="91.0" />
+    <Label fx:id="verif" contentDisplay="CENTER" layoutX="460.0" layoutY="510.0" prefWidth="280.0" text="" />
   </children>
   <stylesheets>
     <URL value="@../../media/login.css" />

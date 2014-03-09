@@ -7,22 +7,29 @@ import java.util.Date;
 public class Projection {
 	
 	int id_projection;
-	Date date_Projection;
-	List<Cinema> cinemas = new ArrayList<Cinema>();
+	String date_Projection;
+	Cinema cinemas = new Cinema();
 	Film film = new Film();
-	
-	
-	
-	
+
+    public Projection() {
+    }
+
+        
 	public Projection(int id_projection) {
 		super();
 		this.id_projection = id_projection;
 	}
+
+    public Projection(int id_projection, String date_Projection,Cinema cinemas, Film film) {
+        this.id_projection = id_projection;
+        this.date_Projection = date_Projection;
+        this.cinemas = cinemas;
+		this.film = film;
+    }
 	
-	public Projection(int id_projection, Date date_Projection,
-			List<Cinema> cinemas, Film film) {
-		super();
-		this.id_projection = id_projection;
+        
+	public Projection( String date_Projection,
+			Cinema cinemas, Film film) {
 		this.date_Projection = date_Projection;
 		this.cinemas = cinemas;
 		this.film = film;
@@ -33,16 +40,16 @@ public class Projection {
 	public void setId_projection(int id_projection) {
 		this.id_projection = id_projection;
 	}
-	public Date getDate_Projection() {
+	public String getDate_Projection() {
 		return date_Projection;
 	}
-	public void setDate_Projection(Date date_Projection) {
+	public void setDate_Projection(String date_Projection) {
 		this.date_Projection = date_Projection;
 	}
-	public List<Cinema> getCinemas() {
+	public Cinema getCinemas() {
 		return cinemas;
 	}
-	public void setCinemas(List<Cinema> cinemas) {
+	public void setCinemas(Cinema cinemas) {
 		this.cinemas = cinemas;
 	}
 	public Film getFilm() {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="892.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.ConsulterProfilController">
+  <children>
+    <Region id="x1" prefHeight="395.0" prefWidth="832.0" style="-fx-background-color:#363638;&#10;-fx-background-radius:10;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+    <Region id="x3" layoutX="70.0" layoutY="15.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-radius:15px;&#10;-fx-background-color:#363638;" />
+    <Text id="x4" fill="WHITE" layoutX="125.0" layoutY="33.0" scaleX="1.3228305825706768" scaleY="1.495647765846217" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon Profil">
+      <font>
+        <Font name="HURTMOLD_" size="16.0" />
+      </font>
+    </Text>
+    <GridPane id="x5" layoutX="70.0" layoutY="75.0" prefHeight="100.0" prefWidth="500.0">
+      <children>
+        <Label text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <font>
+            <Font name="DejaVu Sans Bold" size="16.0" fx:id="x1" />
+          </font>
+          <textFill>
+            <Color blue="0.800" green="0.944" red="1.000" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Label font="$x1" text="Username :" textFill="$x2" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label font="$x1" text="Email :" textFill="$x2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label id="tbname" fx:id="lbname" text="" textFill="#ccedff" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <font>
+            <Font name="System Bold Italic" size="18.0" fx:id="x3" />
+          </font>
+        </Label>
+        <Label fx:id="lbuser" font="$x3" text="" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <textFill>
+            <Color blue="1.000" green="0.929" red="0.800" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Label fx:id="lbmail" font="$x3" text="" textFill="$x4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="0.0" prefWidth="131.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.0" minWidth="0.0" prefWidth="369.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Label id="x6" layoutX="60.0" layoutY="191.0" text="Mes Evènements :" textFill="$x2">
+      <font>
+        <Font name="DejaVu Sans Bold" size="20.0" />
+      </font>
+    </Label>
+    <TableView id="x7" fx:id="table_events" layoutX="61.0" layoutY="234.0" prefHeight="157.0" prefWidth="787.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Column X" />
+        <TableColumn prefWidth="75.0" text="Column X" />
+      </columns>
+    </TableView>
+    <Button id="x8" layoutX="312.0" layoutY="397.0" mnemonicParsing="false" prefWidth="110.0" text="Supprimer" />
+    <Button id="x9" layoutX="460.0" layoutY="397.0" mnemonicParsing="false" prefWidth="110.0" text="Modifier" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.GestionFilmController">
+  <children>
+    <ImageView fitHeight="630.0" fitWidth="1200.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../../media/backEvent.jpg" />
+      </image>
+    </ImageView>
+    <BorderPane layoutX="0.0" layoutY="0.0" prefHeight="576.0" prefWidth="1200.0">
+      <bottom>
+        <VBox id="VBox" alignment="CENTER" prefHeight="466.0" prefWidth="1022.0" spacing="5.0">
+          <children>
+            <AnchorPane id="AnchorPane" prefHeight="388.0" prefWidth="1200.0">
+              <children>
+                <TabPane id="tabpane" fx:id="tabpane_evenement" layoutX="17.0" layoutY="16.0" prefHeight="451.0" prefWidth="1169.0" side="TOP" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab fx:id="tabconsult_event" text="Consultation">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="1024.0">
+                          <children>
+                            <Button fx:id="btn_del" mnemonicParsing="false" onAction="#supprimerLigne" text="Supprimer" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="102.0" />
+                            <Button id="btn_del" fx:id="btn_deltt" mnemonicParsing="false" onAction="#supprimerTout" text="Supprimer Tout" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="205.0" />
+                            <VBox id="VBox" fx:id="vb" alignment="CENTER" prefHeight="240.0" prefWidth="740.0" spacing="5.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                              <children>
+                                <TableView fx:id="tab" onMouseClicked="#remplir" prefHeight="164.0" prefWidth="692.0" VBox.vgrow="ALWAYS" />
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tabajout_event" closable="true" disable="false" text="Ajout">
+                      <content>
+                        <AnchorPane fx:id="validerAjout" prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Label id="lb_titre" layoutX="14.0" layoutY="30.0" prefWidth="84.0" text="Titre du Film" />
+                            <TextField id="tf_titre" fx:id="txtTitre" layoutX="99.0" layoutY="30.0" prefWidth="570.0" />
+                            <Button id="btn_ajout" fx:id="btnajouter" contentDisplay="LEFT" mnemonicParsing="false" onAction="#ajouterFilm" text="Ajouter" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="98.0" />
+                            <Label id="lb_texte" layoutX="14.0" layoutY="63.0" prefWidth="70.0" text="Date Sortie" />
+                            <TextField id="tf_titre" fx:id="txtImage" layoutX="99.0" layoutY="197.0" prefWidth="570.0" promptText="http://" />
+                            <TextField id="tf_titre" fx:id="txtDuree" layoutX="99.0" layoutY="276.0" prefWidth="570.0" promptText="00:00:00" />
+                            <TextField id="tf_titre" fx:id="txtFilm" layoutX="99.0" layoutY="233.0" prefWidth="570.0" promptText="http://" />
+                            <TextField id="tf_titre" fx:id="txtDate" layoutX="99.0" layoutY="63.0" prefWidth="570.0" promptText="jj/mm/aaaa" />
+                            <Label id="lb_texte" layoutX="14.0" layoutY="100.0" prefWidth="70.0" text="Synopsis" />
+                            <Label id="lb_texte" layoutX="14.0" layoutY="200.0" prefWidth="70.0" text="Image " />
+                            <Label id="lb_texte" layoutX="14.0" layoutY="236.0" prefWidth="70.0" text="URL du Film" />
+                            <Label id="lb_texte" layoutX="14.0" layoutY="279.0" prefWidth="70.0" text="Durée" />
+                            <TextArea fx:id="txtSynop" layoutX="99.0" layoutY="100.0" prefHeight="82.0" prefWidth="570.0" wrapText="true" />
+                            <Button fx:id="openpicbtn" layoutX="679.0" layoutY="197.0" minWidth="23.0" mnemonicParsing="false" onAction="#choisirImage" prefWidth="29.0" text="..." />
+                            <Button fx:id="openvidbtn" layoutX="679.0" layoutY="234.0" minWidth="23.0" mnemonicParsing="false" onAction="#choisirVodeo" prefWidth="29.0" text="..." />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tabmodif_event" text="Modification">
+                      <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <AnchorPane id="anchpane_ajout" layoutX="0.0" layoutY="0.0" prefHeight="403.0" prefWidth="1024.0">
+                              <children>
+                                <Label id="lb_titre" layoutX="14.0" layoutY="30.0" prefWidth="84.0" text="Titre du Film" />
+                                <TextField id="tf_titre" fx:id="titreMod" layoutX="99.0" layoutY="30.0" prefWidth="570.0" />
+                                <Label id="lb_texte" layoutX="14.0" layoutY="63.0" prefWidth="70.0" text="Date Sortie" />
+                                <TextField id="tf_titre" fx:id="DureeModif" layoutX="99.0" layoutY="276.0" prefWidth="570.0" promptText="00:00:00" />
+                                <TextField id="tf_titre" fx:id="dateSortieMod" layoutX="99.0" layoutY="63.0" prefWidth="570.0" promptText="jj/mm/aaaa" />
+                                <Label id="lb_texte" layoutX="14.0" layoutY="100.0" prefWidth="70.0" text="Synopsis" />
+                                <Label id="lb_texte" layoutX="14.0" layoutY="279.0" prefWidth="70.0" text="Durée" />
+                                <TextArea fx:id="synopMod" layoutX="99.0" layoutY="100.0" prefHeight="164.0" prefWidth="570.0" wrapText="true" />
+                              </children>
+                            </AnchorPane>
+                            <Button id="btn_modif" fx:id="btnModif" mnemonicParsing="false" onAction="#modifierFilm" text="Modifier" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="98.0" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+              </children>
+            </AnchorPane>
+          </children>
+        </VBox>
+      </bottom>
+    </BorderPane>
+  </children>
+</AnchorPane>

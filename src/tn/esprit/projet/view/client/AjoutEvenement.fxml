@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="892.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.AjoutEvenementController">
+  <children>
+    <Region id="x1" prefHeight="395.0" prefWidth="832.0" style="-fx-background-color:#363638;&#10;-fx-background-radius:10;" AnchorPane.bottomAnchor="30.68" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="29.32" />
+    <Region id="x3" layoutX="70.0" layoutY="15.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-radius:15px;&#10;-fx-background-color:#363638;" />
+    <Text id="x4" fill="WHITE" layoutX="105.0" layoutY="33.0" scaleX="1.3228305825706768" scaleY="1.495647765846217" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un Evènement" textAlignment="CENTER">
+      <font>
+        <Font name="HURTMOLD_" size="13.0" />
+      </font>
+    </Text>
+    <GridPane id="x5" layoutX="70.0" layoutY="56.0" prefHeight="305.0" prefWidth="501.0">
+      <children>
+        <Label text="Titre de  l'évènement :" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <font>
+            <Font name="DejaVu Sans Bold" size="16.0" fx:id="x1" />
+          </font>
+          <textFill>
+            <Color blue="0.800" green="0.944" red="1.000" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Label font="$x1" text="Date de Début :" textFill="$x2" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label font="$x1" text="Date de fin :" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <textFill>
+            <Color blue="0.800" green="0.945" red="1.000" fx:id="x3" />
+          </textFill>
+        </Label>
+        <Label font="$x1" text="Type de l'évènement :" textFill="$x3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label font="$x1" text="Description:" textFill="$x3" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="tf_titre" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextArea fx:id="ta_description" prefHeight="133.0" prefWidth="344.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <ComboBox fx:id="cbtypeEvent" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <stylesheets>
+            <URL value="@../../media/AccueilClient.css" />
+          </stylesheets>
+        </ComboBox>
+        <Label font="$x1" text="Image" textFill="$x3" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <TextField id="tf_date_deb" fx:id="tf_annee_deb" minWidth="-Infinity" prefWidth="56.0" promptText="année" />
+            <ComboBox fx:id="cb_mois_deb" minWidth="34.0" prefWidth="34.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cb_jour_deb" minWidth="34.0" prefWidth="34.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TextField fx:id="tf_heure" prefWidth="34.0" />
+            <Label prefWidth="8.9998779296875" text=":" textFill="WHITE">
+              <font>
+                <Font size="16.0" fx:id="x4" />
+              </font>
+            </Label>
+            <TextField prefWidth="34.0" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="277.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <TextField id="tf_date_deb" fx:id="tf_annee_fin" minWidth="-Infinity" prefWidth="56.0" promptText="année" />
+            <ComboBox minWidth="34.0" prefWidth="34.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox minWidth="34.0" prefWidth="34.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TextField prefWidth="34.0" />
+            <Label font="$x4" prefWidth="8.9998779296875" text=":" textFill="WHITE" />
+            <TextField prefWidth="34.0" />
+          </children>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="0.0" prefWidth="223.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.0" minWidth="0.0" prefWidth="277.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="77.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="68.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="78.0" minHeight="0.0" prefHeight="63.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="68.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Button layoutX="259.0" layoutY="386.0" mnemonicParsing="false" onAction="#ajouterEvent" prefWidth="112.0" text="Ajouter" />
+    <Button layoutX="383.0" layoutY="386.0" mnemonicParsing="false" onAction="#effacerTout" prefWidth="112.0" text="Effacer" />
+  </children>
+</AnchorPane>

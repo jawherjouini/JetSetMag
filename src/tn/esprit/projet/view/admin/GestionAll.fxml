@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.GestionAllController">
+  <children>
+    <AnchorPane fx:id="header" prefHeight="30.0" prefWidth="1200.0" AnchorPane.bottomAnchor="630.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <MenuBar id="menu" layoutX="0.0" layoutY="0.0" minHeight="21.0" prefHeight="30.0" prefWidth="1200.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="Films">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToFilm" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="News">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToNews" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Evènements">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToEvents" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Membres">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToMembre" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Salles de cinéma">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToSalle" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Commentaires">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToComment" text="Gérer" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Statistiques">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#goToStatistiques" text="Gérer" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="body" prefHeight="630.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+  </children>
+</AnchorPane>

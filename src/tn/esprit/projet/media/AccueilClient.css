@@ -1,0 +1,80 @@
+/*
+ * Empty Stylesheet file.
+ */
+.tabprofil{
+    -fx-text-fill:#ffffff;
+    -fx-background-size:20px;
+}
+
+.menubtnh{
+    -fx-background-color: white;
+    -fx-background-radius:0;
+}
+.button:hover{
+    -fx-background-color:
+        linear-gradient(white 25%, white 75%, white 100%),
+        radial-gradient(center 50% 50%, radius 70%, #e5dfdf,  #e5dfdf);
+
+    
+}
+.menubtnh:pressed{
+     -fx-text-fill:white;
+      -fx-background-color: 
+        linear-gradient(white 25%, darksalmon 75%, white 100%),
+        radial-gradient(center 50% 50%, radius 70%, #000000, #000000);
+    
+}
+.menubtnv{
+     -fx-text-fill:white;
+     -fx-background-color: orange;
+    -fx-background-radius:0;
+    
+}
+.menubtnv:hover{
+    -fx-background-color: 
+        linear-gradient(white 25%, white 75%, white 100%),
+        radial-gradient(center 50% 50%, radius 70%, #e5dfdf,  #e5dfdf);
+
+    
+}
+.menubtnv:pressed{
+    
+     -fx-text-fill:#e66e0d;
+      -fx-background-color: 
+        linear-gradient(white 25%, darksalmon 75%, white 100%),
+        radial-gradient(center 50% 50%, radius 70%, #000000, #000000);
+    
+}
+.menu-bar{
+  -fx-background-color: white;
+  -fx-border-color:  #f0cd90;
+ -fx-border-width: 1;
+
+}
+
+.menu-bar .label {
+    -fx-font-size: 25 pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: black;
+
+}
+
+
+.menu:hover {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    
+    
+}
+
+.menu-item .label{
+     -fx-font-size: 30 pt;
+    -fx-label-line-length: 8;
+      -fx-background-color: yellowgreen;
+}
+#item1{
+   -fx-text-alignment: center;
+   -fx-text-fill: green;
+   
+}
+

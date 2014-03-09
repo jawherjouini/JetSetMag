@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.GestionStatController">
+  <children>
+    <TitledPane animated="false" collapsible="false" opacity="0.99" prefHeight="400.0" prefWidth="918.0" text="Statistique" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-318.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <children>
+            <VBox prefHeight="219.0" prefWidth="135.0" AnchorPane.bottomAnchor="257.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1379.0" AnchorPane.topAnchor="156.5">
+              <children>
+                <Button fx:id="visite" mnemonicParsing="false" onAction="#visiteapplication" prefHeight="74.0" prefWidth="135.0" style="fx-background-color: &#10;        linear-gradient(#f2f2f2, #d6d6d6),&#10;        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),&#10;        linear-gradient(#dddddd 0%, #f6f6f6 50%);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Visite de l'application" />
+                <Button mnemonicParsing="false" onAction="#Visiterubrique" prefHeight="74.0" prefWidth="135.0" style="fx-background-color: &#10;        linear-gradient(#f2f2f2, #d6d6d6),&#10;        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),&#10;        linear-gradient(#dddddd 0%, #f6f6f6 50%);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Visite Rubrique" />
+                <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="135.0" style="fx-background-color: &#10;        linear-gradient(#f2f2f2, #d6d6d6),&#10;        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),&#10;        linear-gradient(#dddddd 0%, #f6f6f6 50%);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: black;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Rapport" />
+              </children>
+            </VBox>
+            <Separator layoutX="135.0" orientation="VERTICAL" prefHeight="373.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane prefHeight="362.0" prefWidth="445.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+              <children>
+                <LineChart fx:id="linechart" layoutX="77.0" layoutY="106.0" prefHeight="354.0" prefWidth="517.0" visible="true">
+                  <xAxis>
+                    <CategoryAxis label="Mois" />
+                  </xAxis>
+                  <yAxis>
+                    <CategoryAxis label="Nombre de visite par mois" />
+                  </yAxis>
+                </LineChart>
+                <PieChart id="PieChart" fx:id="pie" layoutX="691.0" layoutY="50.0" />
+                <Separator layoutX="618.0" layoutY="0.0" orientation="VERTICAL" prefHeight="499.0" />
+              </children>
+            </Pane>
+          </children>
+        </AnchorPane>
+      </content>
+      <font>
+        <Font name="System Bold" size="13.0" />
+      </font>
+    </TitledPane>
+  </children>
+</AnchorPane>

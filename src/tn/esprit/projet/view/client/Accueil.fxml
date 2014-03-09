@@ -11,16 +11,16 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="576.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.AccueilController">
+<AnchorPane id="AnchorPane" disable="false" prefHeight="660.0" prefWidth="1200.0" snapToPixel="true" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.AccueilController">
   <children>
-    <ImageView fitHeight="576.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <ImageView fitHeight="660.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <image>
-        <Image url="@../../media/wallpaper.png" />
+        <Image url="@../../media/wall2.jpg" />
       </image>
     </ImageView>
-    <HBox id="HBox" alignment="CENTER" layoutY="213.0" spacing="5.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="139.0">
+    <HBox id="HBox" alignment="CENTER" fillHeight="true" spacing="5.0" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="255.0">
       <children>
-        <Button mnemonicParsing="false" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btnleft" text="BOX OFFICE" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#accueilBoxOffice" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btnleft" text="BOX OFFICE" textFill="WHITE">
           <effect>
             <InnerShadow>
               <color>
@@ -32,24 +32,24 @@
             <Font size="20.0" fx:id="x2" />
           </font>
         </Button>
-        <Button font="$x2" mnemonicParsing="false" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btncenter" text="NEWS" textFill="WHITE">
+        <Button font="$x2" mnemonicParsing="false" onAction="#accueilNews" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btncenter" text="NEWS" textFill="WHITE">
           <effect>
             <InnerShadow color="$x1" />
           </effect>
         </Button>
-        <Button font="$x2" mnemonicParsing="false" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btncenter" text="EVENTS" textFill="WHITE">
+        <Button font="$x2" mnemonicParsing="false" onAction="#accueilEvents" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btncenter" text="EVENTS" textFill="WHITE">
           <effect>
             <InnerShadow color="$x1" />
           </effect>
         </Button>
-        <Button fx:id="bon" font="$x2" mnemonicParsing="false" onAction="#bonplan" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btnright" text="BONS PLANS" textFill="WHITE">
+        <Button fx:id="bon" font="$x2" mnemonicParsing="false" onAction="#accueilBonsPlans" opacity="0.7" prefHeight="150.0" prefWidth="180.0" styleClass="btnright" text="BONS PLANS" textFill="WHITE">
           <effect>
             <InnerShadow color="$x1" />
           </effect>
         </Button>
       </children>
     </HBox>
-    <HBox id="HBox" alignment="CENTER" layoutY="176.0" prefHeight="37.0" prefWidth="205.6796875" spacing="20.0" AnchorPane.leftAnchor="688.0" AnchorPane.rightAnchor="139.0">
+    <HBox id="HBox" alignment="CENTER" layoutX="762.0" layoutY="218.0" prefHeight="37.0" prefWidth="205.6796875" spacing="20.0">
       <children>
         <Hyperlink fx:id="connecter" onAction="#authentifier" text="Se connecter" textAlignment="LEFT" textOverrun="WORD_ELLIPSIS" wrapText="true">
           <font>
@@ -59,10 +59,10 @@
             <Color blue="0.750" green="0.750" red="0.750" fx:id="x3" />
           </textFill>
         </Hyperlink>
-        <Hyperlink font="$x4" text="S'inscrire" textFill="$x3" />
+        <Hyperlink font="$x4" onAction="#inscrire" text="S'inscrire" textFill="$x3" />
       </children>
     </HBox>
-    <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="223.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../../media/LoginLogo.png" />
       </image>

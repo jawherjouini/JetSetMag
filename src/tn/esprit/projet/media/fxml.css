@@ -3,6 +3,7 @@
  */
 
 .mainFxmlClass {
+    // -fx-background-images: url("/wallpaper.png");
 
 }
 .btnleft{
@@ -31,4 +32,8 @@
     -fx-background-color: 
         linear-gradient(white 25%, darksalmon 75%, white 100%),
         radial-gradient(center 50% 50%, radius 70%, #ff3366, #000000);
+}
+#mainpane{
+   
+    -fx-background-color: #4a5661;
 }
