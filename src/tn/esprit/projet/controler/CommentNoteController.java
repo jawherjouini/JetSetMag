@@ -22,7 +22,7 @@ import static tn.esprit.projet.controler.SoireeController.eventSelect;
 import static tn.esprit.projet.controler.NewsController.articleSelect;
 import tn.esprit.projet.dao.ArticleDAO;
 import tn.esprit.projet.dao.CommentaireDAO;
-import tn.esprit.projet.dao.MembreDao;
+import tn.esprit.projet.dao.MembreDAO;
 import tn.esprit.projet.dao.NoteDAO;
 import tn.esprit.projet.model.Commentaire;
 import tn.esprit.projet.util.ControlledScreen;
@@ -39,7 +39,7 @@ public class CommentNoteController implements Initializable, ControlledScreen {
     ScreensController sc;
     CommentaireDAO cdao = new CommentaireDAO();
     ArticleDAO adao = new ArticleDAO();
-    MembreDao mdao = new MembreDao();
+    MembreDAO mdao = new MembreDAO();
 
     @FXML
     private Label lb_titre;

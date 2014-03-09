@@ -90,6 +90,28 @@ public class MembreDao {
         return rs;
 
     }
+    public Membre FindMembreById(String username, String pass) {
+        Statement stmt;
+        Connection cnx;
+        ResultSet rs;
+        Membre membre = null;
+
+        try {
+            cnx = Connexion.getInstance();
+            String query = "Select * from membre where username='" + username + "' and password='" + pass + "'";
+            stmt = cnx.createStatement();
+            rs = stmt.executeQuery(query);
+            if (rs.next()) {
+                System.out.println(rs.getInt(1));
+                membre = new Membre(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getBoolean(6));
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Listage impossible: " + ex.getMessage());
+        }
+        return membre;
+    }
+
 
     public ObservableList<Membre> ListerMembre() {
         Statement stmt;
@@ -186,4 +208,27 @@ public class MembreDao {
         }
         return passwordEncoded;
     }
+<<<<<<< HEAD
+=======
+     public int updateMembre(Membre membre) {
+        Statement stmt;
+        Connection cnx;
+        int rs = 0;
+        System.out.println(membre.toString());
+
+        try {
+            cnx = Connexion.getInstance();
+            String query = "Update membre set username='" + membre.getUsername() + "', password='" + membre.getPassword() + "', nom='" + membre.getNom() + "',email='" + membre.getEmail() + "' where id_membre=" + membre.getId_membre();
+            stmt = cnx.createStatement();
+            rs = stmt.executeUpdate(query);
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Listage impossible: " + ex.getMessage());
+        }
+        return rs;
+
+    }
+
+
+>>>>>>> c07b239ffea74b86eac5e8a6fc2edca32bb1da35
 }
