@@ -73,18 +73,6 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     private ImageView header;
     @FXML
     private Button btn_pdf;
-    @FXML
-    private MenuItem g_film;
-    @FXML
-    private MenuItem g_events;
-    @FXML
-    private MenuItem g_membre;
-    @FXML
-    private MenuItem g_salle;
-    @FXML
-    private MenuItem g_commentaire;
-    @FXML
-    private MenuItem g_statistiques;
 
     /**
      * Initializes the controller class.
@@ -92,8 +80,6 @@ public class GestionNewsController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         charger();
-        String path = new File("").getAbsolutePath();
-        System.out.println(path);
     }
 
     public void charger() {
@@ -176,33 +162,18 @@ public class GestionNewsController implements Initializable, ControlledScreen {
         cdao.genererRapport("article");
     }
 
-    @FXML
-    private void goToFilm(ActionEvent event) {
-    }
-
-    @FXML
-    private void goToEvents(ActionEvent event) {
+        private void goToEvents(ActionEvent event) {
         MainApp.mainCantainer.loadscreen(MainApp.g_evenementID, MainApp.g_evenementFile);
         screencontroller.setScreen(MainApp.g_evenementID);
     }
 
-    @FXML
-    private void goToMembre(ActionEvent event) {
+        private void goToMembre(ActionEvent event) {
          MainApp.mainCantainer.loadscreen(MainApp.g_membreID, MainApp.g_membreFile);
           screencontroller.setScreen(MainApp.g_membreID);
     }
 
-    @FXML
-    private void goToSalle(ActionEvent event) {
-    }
-
-    @FXML
-    private void goToCommentaire(ActionEvent event) {
+        private void goToCommentaire(ActionEvent event) {
         MainApp.mainCantainer.loadscreen(MainApp.g_commentaireID, MainApp.g_commentaireFile);
         screencontroller.setScreen(MainApp.g_commentaireID);
-    }
-
-    @FXML
-    private void goTostatistques(ActionEvent event) {
     }
 }

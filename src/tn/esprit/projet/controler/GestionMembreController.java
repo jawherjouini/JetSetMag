@@ -1,7 +1,9 @@
 
 package tn.esprit.projet.controler;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,8 +22,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
+import javax.mail.MessagingException;
 import tn.esprit.projet.dao.CommonDAO;
-import tn.esprit.projet.dao.MembreDAO;
+import tn.esprit.projet.dao.MembreDao;
 import tn.esprit.projet.main.MainApp;
 
 import tn.esprit.projet.model.Membre;
@@ -36,7 +39,7 @@ import tn.esprit.projet.util.ScreensController;
 public class GestionMembreController implements Initializable,ControlledScreen {
     ScreensController screencontroller;
     CommonDAO cdao = new CommonDAO();
-     MembreDAO adao = new MembreDAO();
+     MembreDao adao = new MembreDao();
 
     @FXML
     private MenuBar menu;
@@ -139,8 +142,7 @@ public class GestionMembreController implements Initializable,ControlledScreen {
     }
 
     @FXML
-    private void AjouterMembre(ActionEvent event) throws InterruptedException {
-        
+    private void AjouterMembre(ActionEvent event) throws InterruptedException, SQLException, UnsupportedEncodingException, ClassNotFoundException, MessagingException {
        adao.AjouterMembre(Nom.getText() ,User_name.getText(), email.getText()) ;
        charger();
        message.setText(adao.returnMessage());
