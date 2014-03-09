@@ -246,7 +246,7 @@ public class GestionFilmController implements Initializable, ControlledScreen {
     private void modifierFilm(ActionEvent event) {
         System.out.println("aaaaaaaaa");
         Film film= new Film(id_film);
-        film.setTitre(titreMod.getText());
+        film.setNom_film(titreMod.getText());
         film.setSynopsis(synopMod.getText());
         film.setDate_sortie(dateSortieMod.getText());
         film.setDuree(DureeModif.getText());
@@ -262,7 +262,7 @@ public class GestionFilmController implements Initializable, ControlledScreen {
         System.out.println(model.getFocusedItem());
         try {
              id_film=((Film) model.getFocusedItem()).getId_film();
-             titreMod.setText(((Film) model.getFocusedItem()).getTitre());
+             titreMod.setText(((Film) model.getFocusedItem()).getNom_film());
              DureeModif.setText(((Film) model.getFocusedItem()).getDuree());
              dateSortieMod.setText(((Film) model.getFocusedItem()).getDate_sortie());
              synopMod.setText(((Film) model.getFocusedItem()).getSynopsis());   

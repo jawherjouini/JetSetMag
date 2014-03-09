@@ -46,9 +46,9 @@ public class FilmDao implements IJetSet<Film>{
                
                 ps.setString(1, obj.getDate_sortie());
                 ps.setString(2, obj.getSynopsis());
-              
-                 ps.setString(3, obj.getDuree());
-                  ps.setString(4, obj.getTitre());
+               ps.setString(3, obj.getNom_film());
+                 ps.setString(4, obj.getDuree());
+                 
                   //System.out.println("aaaaaaaaaaaa");
                   //System.out.println(req);
                 resultat = ps.executeUpdate();
@@ -78,7 +78,7 @@ public class FilmDao implements IJetSet<Film>{
                 ps.setInt(5, obj.getId_film());
                 ps.setString(1, obj.getDate_sortie());
                 ps.setString(2, obj.getSynopsis());
-                ps.setString(3, obj.getTitre());
+                ps.setString(3, obj.getNom_film());
                 ps.setString(4, obj.getDuree().trim());
                 resultat = ps.executeUpdate();
                 if (resultat != 0) {
@@ -139,11 +139,11 @@ public class FilmDao implements IJetSet<Film>{
                  Film a = new Film();
                 a.setId_film(rs.getInt(1));
                 a.setDate_sortie(rs.getString(2));
-           
+                
                 a.setSynopsis(rs.getString(4));
                 
                 a.setDate_ajout(rs.getDate(5));
-                a.setTitre(rs.getString(6));
+                a.setNom_film(rs.getString(6));
                 a.setDuree(rs.getString(7));
                 films.add(a);
 //                int id_Film = rs.getInt("id_Film");
@@ -169,7 +169,7 @@ public class FilmDao implements IJetSet<Film>{
         Film film = new Film();
         try {
              connexion = Connexion.getInstance();
-            req = "Select * FROM film WHERE Id_Film=?";
+            req = "Select * FROM film WHERE id_film=?";
             ps = connexion.prepareStatement(req);
             ps.setInt(1, id);
             rs = ps.executeQuery();
@@ -181,11 +181,44 @@ public class FilmDao implements IJetSet<Film>{
                  Film a = new Film();
                 a.setId_film(rs.getInt(1));
                 a.setDate_sortie(rs.getString(2));
-              
+               
                 a.setSynopsis(rs.getString(4));
                 
                 a.setDate_ajout(rs.getDate(5));
-                a.setTitre(rs.getString(6));
+                a.setNom_film(rs.getString(6));
+                a.setDuree(rs.getString(7));
+               film=a;
+            }
+            rs.close();
+
+        } catch (Exception e) {
+            System.out.println("Affichage impossible: " + e.getMessage());
+        }
+       // System.out.println(film);
+        return film;    
+    }  
+    
+     public Film readByNom(String nom) {
+        Film film = new Film();
+        try {
+            connexion = Connexion.getInstance();
+            req = "Select * FROM film WHERE nom_film=?";
+            ps = connexion.prepareStatement(req);
+            ps.setString(1, nom);
+            rs = ps.executeQuery();
+            
+        
+         
+            while (rs.next()) {
+                
+                 Film a = new Film();
+                a.setId_film(rs.getInt(1));
+                a.setDate_sortie(rs.getString(2));
+               
+                a.setSynopsis(rs.getString(4));
+                
+                a.setDate_ajout(rs.getDate(5));
+                a.setNom_film(rs.getString(6));
                 a.setDuree(rs.getString(7));
                film=a;
             }

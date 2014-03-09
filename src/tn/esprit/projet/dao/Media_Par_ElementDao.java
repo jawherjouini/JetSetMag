@@ -159,6 +159,68 @@ public int deleteAll() {
         return medias;
     }
 
+    public ObservableList<Media> readByFilm(Film f) {
+        ObservableList<Media> medias = null;
+        try {
+            connexion = Connexion.getInstance();
+            req = "Select * from Media_Par_Element where id_film=?";
+            
+            ps = connexion.prepareStatement(req);
+            ps.setInt(1, f.getId_film());
+
+            rs = ps.executeQuery();
+           
+            medias=FXCollections.observableArrayList();
+            while (rs.next()) {
+                Media_Par_Element media_Par_Element= new Media_Par_Element();
+                MediaDao mediaDao = new MediaDao();
+                FilmDao filmDao = new FilmDao();
+                ProjectionDao projectionDao = new ProjectionDao();
+                media_Par_Element.setId_Media_Page(rs.getInt(1));
+                media_Par_Element.setMedia(mediaDao.readById(rs.getInt(2)));
+                media_Par_Element.setFilm(filmDao.readById(rs.getInt(4))); 
+                media_Par_Element.setProjection(projectionDao.readById(rs.getInt(6))); 
+                Film film = new Film();
+                film= filmDao.readById(rs.getInt(3)); 
+                Media media = new Media();
+                media = mediaDao.readById(rs.getInt(2));
+                medias.add(media);
+            }
+            rs.close();
+        } catch (Exception e) {
+            //System.out.println("Affichage impossible: " + e.getMessage());
+        }
+        return medias;
+    }
+    public ObservableList<Media_Par_Element> readVyMedia() {
+           ObservableList<Media_Par_Element> medias = null;
+        try {
+            medias=FXCollections.observableArrayList();
+            connexion = Connexion.getInstance();
+            req = "Select * from Media_Par_Element";
+            ps = connexion.prepareStatement(req);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Media_Par_Element media_Par_Element= new Media_Par_Element();
+                MediaDao mediaDao = new MediaDao();
+                FilmDao filmDao = new FilmDao();
+                ProjectionDao projectionDao = new ProjectionDao();
+                media_Par_Element.setId_Media_Page(rs.getInt(1));
+                media_Par_Element.setMedia(mediaDao.readById(rs.getInt(2)));
+                media_Par_Element.setFilm(filmDao.readById(rs.getInt(4))); 
+                media_Par_Element.setProjection(projectionDao.readById(rs.getInt(6))); 
+                Film film = new Film();
+                film= filmDao.readById(rs.getInt(3));
+                Media media = new Media();
+                media = mediaDao.readById(rs.getInt(2));
+                medias.add(media_Par_Element);
+            }
+            rs.close();
+        } catch (Exception e) {
+            //System.out.println("Affichage impossible: " + e.getMessage());
+        }
+        return medias;
+    }
     @Override
     public Media_Par_Element readById(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

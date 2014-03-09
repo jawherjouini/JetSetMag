@@ -48,6 +48,17 @@ public class MainApp extends Application {
     public static String c_newsID = "news";
     public static String c_newsFile =  "/tn/esprit/projet/view/client/News.fxml";
     
+    public static String c_paccueilID = "consulterpaccueil";
+    public static String c_paccueilFile =  "/tn/esprit/projet/view/client/ConsulterPAccueil.fxml";
+    
+    public static String c_boxofficeID = "boxoffice";
+    public static String c_boxofficeFile =  "/tn/esprit/projet/view/client/BoxOffice.fxml";
+    
+    public static String c_regarderfilmID = "regarderfilm";
+    public static String c_regarderfilmFile =  "/tn/esprit/projet/view/client/RegarderFilm.fxml";
+    
+    
+    
     public static String c_notercommenterID = "notercommenter";
     public static String c_notercommenterFile= "/tn/esprit/projet/view/client/CommentNote.fxml";
     

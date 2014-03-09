@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.RegarderFilmController">
+  <children>
+    <ListView fx:id="listFilm" onMouseClicked="#afficherFilm" prefHeight="340.0" prefWidth="328.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
+    <TextArea fx:id="titrefilm" disable="true" opacity="1.0" prefHeight="47.999900000002526" prefWidth="482.0" style=" -fx-text-fill:black;" wrapText="true" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="16.0" />
+    <HBox id="HBox" alignment="CENTER" layoutX="77.0" layoutY="1.0" prefHeight="34.0" prefWidth="213.0" spacing="5.0" style="-fx-background-radius:0 0 20 20;&#10;-fx-boder-radius:0 0 20 20;&#10;-fx-background-color:#2c2c2c;">
+      <children>
+        <Hyperlink prefWidth="50.0" style="" text="Film" textFill="WHITE">
+          <font>
+            <Font size="14.0" />
+          </font>
+        </Hyperlink>
+      </children>
+    </HBox>
+    <Separator layoutX="350.0" layoutY="1.0" orientation="VERTICAL" prefHeight="403.0" prefWidth="6.0" />
+    <Pane fx:id="panefilm" layoutX="446.0" layoutY="84.0" prefHeight="200.0" prefWidth="659.0" />
+    <TextArea fx:id="synfilm" disable="true" layoutX="381.0" layoutY="315.0" opacity="1.0" prefHeight="68.0" prefWidth="789.0" style=" -fx-text-fill:black;" text="" wrapText="true" />
+  </children>
+</AnchorPane>

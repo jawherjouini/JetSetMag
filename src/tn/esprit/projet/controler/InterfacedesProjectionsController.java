@@ -189,7 +189,7 @@ public class InterfacedesProjectionsController implements Initializable,Controll
 //                               // images.add(new Image("file://"+string.trim() ,false));
 //                            
 //                       }
-                        lblNom.setText(listmedia.get((int)scrollBar.getValue()).getFilm().getTitre());
+                        lblNom.setText(listmedia.get((int)scrollBar.getValue()).getFilm().getNom_film());
                         lblDesc.setText(listmedia.get((int)scrollBar.getValue()).getFilm().getSynopsis());
                         lblDateH.setText(listmedia.get((int)scrollBar.getValue()).getProjection().getDate_Projection());
                         imgview= new ImageView(image);
