@@ -73,7 +73,6 @@ public class RSSFeedReader {
         try {
             URL feedUrl = new URL(url);
             SyndFeedInput input = new SyndFeedInput();
-            System.out.println(feedUrl);
             SyndFeed feed = input.build(new XmlReader(feedUrl));
             Iterator entryIter = feed.getEntries().iterator();
             while (entryIter.hasNext()) {
@@ -81,13 +80,7 @@ public class RSSFeedReader {
                  String desc = entry.getTitleEx().getValue();
                   String s = desc.replaceAll("<[^>]*>", "")+"\n";
                   s = s.replaceAll("&nbsp", "")+"\n";
-//                  String s2 = entry.getEnclosures().toString()+"\n";
-//                  s2 = s2.replaceAll("Synd[^>]*http", "")+"\n";
-//                  s2 = s2.substring(1, s2.length() - 1)+"\n";
-//                  s2 = "http" + s2+"\n";
- //                 String event = s + s2 + entry.getTitle();
-                  titles.add(s);
-//                  }                       
+                  titles.add(s);                     
                 }
         }catch(Exception ex){}
         return titles;
@@ -95,82 +88,24 @@ public class RSSFeedReader {
     }
     
       public List<String> getItems(String url) {
-        // System.out.println(url);
-    		
         List<String> events = new ArrayList<String>();
         try {
-            URL feedUrl = new URL(url);
-            /* SyndFeedInput: parser to process RSS feeds into SyndFeed instance*/
-            
+            URL feedUrl = new URL(url);            
             SyndFeedInput input = new SyndFeedInput();
 
-            /* Load the RSS feed
-             * XmlReader: reading an XML document
-             * SyndFeed: rss feed
-             */ 
-            
-            System.out.println(feedUrl);
             SyndFeed feed = input.build(new XmlReader(feedUrl));
-            
-//        
-//            System.out.println("Feed Author: "+ feed.getAuthor());
-//             System.out.println("Feed Title: "+ feed.getTitle());
-//             System.out.println("Feed Description: "+ feed.getDescription());
-//             System.out.println("Feed Version: "+ feed.getFeedType());
-             // Iterate through feed items, display each item title
-            //System.out.println(feed.getEntries().toString());  
-           
+
             Iterator entryIter = feed.getEntries().iterator();
             while (entryIter.hasNext()) {
-                SyndEntry entry = (SyndEntry) entryIter.next();
-               
-                //if (entry.getCategories().toString().contains("Cinéma")) {
-                
-//                List<SyndEnclosure> encls = entry.getEnclosures();
-//                if(!encls.isEmpty()){
-//                  for(SyndEnclosure e : encls){
-//                  String imgURL = e.getUrl().toString();
-//                  System.out.println(imgURL);
+                SyndEntry entry = (SyndEntry) entryIter.next();           
                  String desc = entry.getDescription().getValue();
                   String s = desc.replaceAll("<[^>]*>", "")+"\n";
-                  s = s.replaceAll("&nbsp", "")+"\n";
-                  String s2 = entry.getEnclosures().toString()+"\n";
-                  s2 = s2.replaceAll("Synd[^>]*http", "")+"\n";
-                  s2 = s2.substring(1, s2.length() - 1)+"\n";
-                  s2 = "http" + s2+"\n";
-                  String event = s + s2 + entry.getTitle();
+                  s = s.replaceAll("&nbsp", "")+"\n";                 
+                  String event = s ;
                   events.add(event);
-//                  }                       
+                   
                 }
-                //List<SyndEnclosure> encls = entry.getEnclosures();
-//                List<String> images= new ArrayList<String>();
-//                if(!encls.isEmpty()){
-//                  for(SyndEnclosure e : encls){
-//                  String imgURL = e.getUrl().toString();
-//                  images.add(imgURL);
-//                  }
-//                }
-                
-            
-  
- //               List<SyndEnclosure> enclosures = new ArrayList();
-                //enclosures.get(0).getUrl();
-//                enclosures.add( createSyndEnclosure (feed, entry,feedUrl));
-//                entry.setEnclosures(enclosures);
-////                    
-                 
-                //String a = entry.getContents().get(1).toString();//.getUri().toString();
-              
-                
-                    
-//                    $film = "Harry Potter et les reliques de la mort" ;
-//                	$url = "http://www.allocine.fr/recherche/?q=".$film."" ;
-//                	$remplacement = "%20" ;
-//                	$url = str_replace( " ", $remplacement, $url ) ;
-//                	$html = file_get_contents( $url );
-//                	echo $html;
-                	
-                //}
+    
             }
             
   
@@ -184,14 +119,6 @@ public class RSSFeedReader {
         
     }
     
-      public SyndEnclosure createSyndEnclosure(Feed feed, Entry entry,
-    		            Link link) {
-    		        SyndEnclosure syndEncl = new SyndEnclosureImpl();
-    		        syndEncl.setUrl(link.getHref());
-    		        syndEncl.setType(link.getType());
-    		        syndEncl.setLength(link.getLength());
-    		       return syndEncl;
-    		     }
-    		     
+     
 
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.ConsulterPAccueilController">
+  <children>
+    <AnchorPane prefHeight="404.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0" />
+    <AnchorPane id="AnchorPane" layoutX="0.0" layoutY="1.0" prefWidth="1200.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" prefHeight="51.0" prefWidth="1200.0" spacing="5.0" style="-fx-background-color:#bfbfbf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+          <children>
+            <Hyperlink fx:id="boxoffice" onAction="#afficherBoxoffice" prefWidth="281.0" text="Box Office" textFill="BLACK" />
+            <Hyperlink fx:id="projection" onAction="#afficherProjection" prefWidth="281.0" text="Projection" textFill="BLACK" />
+            <Hyperlink fx:id="film" onAction="#afficherFilm" prefWidth="202.0" text="Film" textFill="BLACK" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

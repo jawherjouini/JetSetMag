@@ -1,0 +1,33 @@
+.gradient {
+	/* Anciens navigateurs */
+	-fx-background: #aaeeff url("gradient-bg.png") repeat-x top;
+	
+	-fx-background-size: 100% 100%;
+	/* Navigateurs récents */
+	-fx-background: -webkit-gradient(
+		linear,
+		left top, left bottom,
+		from(#3399cc),
+		to(#aaeeff)
+	);
+	-fx-background: -webkit-linear-gradient(
+		top,
+		#3399cc,
+		#aaeeff
+	);
+	-fx-background: -moz-linear-gradient(
+		top,
+		#3399cc,
+		#aaeeff
+	);
+	-fx-background: -o-linear-gradient(
+		top,
+		#3399cc,
+		#aaeeff
+	);
+	-fx-background: linear-gradient(
+		top,
+		#3399cc,
+		#aaeeff
+	);
+}

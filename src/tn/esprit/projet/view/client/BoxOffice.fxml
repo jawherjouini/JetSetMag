@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" layoutX="0.0" prefHeight="404.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tn.esprit.projet.controler.BoxOfficeController">
+  <children>
+    <Pane fx:id="boxpane" prefHeight="404.0" prefWidth="888.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="312.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label fx:id="lblBox" layoutX="368.0" layoutY="14.0" prefHeight="28.9609375" prefWidth="202.0" text="Box Office" textAlignment="LEFT" textFill="#bfbfbf" textOverrun="ELLIPSIS" wrapText="false">
+          <font>
+            <Font name="Euphemia" size="20.0" />
+          </font>
+        </Label>
+        <Pane fx:id="paneImg" layoutX="14.0" layoutY="54.0" prefHeight="334.0" prefWidth="874.0">
+          <children>
+            <ImageView fitHeight="64.4152542064441" fitWidth="230.3333282470703" layoutX="23.0" layoutY="-43.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../media/LoginLogo.png" />
+              </image>
+            </ImageView>
+          </children>
+        </Pane>
+      </children>
+    </Pane>
+    <Pane fx:id="DescPane" prefHeight="404.0" prefWidth="312.0" style="-fx-background-color: linear-gradient(to bottom, black 60, #141414 60.1%, black 100%);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="888.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <TextArea id="txtDesx" fx:id="txtDesc" disable="true" focusTraversable="true" layoutX="0.0" layoutY="191.0" opacity="1.0" prefHeight="211.0" prefWidth="311.9999000000025" promptText="" style="-fx-background-color: linear-gradient(to bottom, black 60, #141414 60.1%, black 100%);&#10;&#10; -fx-text-fill:white;" text="" wrapText="true" />
+        <TextArea fx:id="titleDesc" disable="true" layoutX="0.0" layoutY="54.0" prefHeight="74.0" prefWidth="311.9998779296875" style="-fx-background-color: linear-gradient(to bottom, black 60, #141414 60.1%, black 100%);&#10; -fx-text-fill:white;" text="" wrapText="true" />
+        <Label layoutX="7.0" layoutY="28.0" minHeight="14.9609375" prefHeight="26.0" prefWidth="132.0" text="Film">
+          <font>
+            <Font name="Arial Bold" size="16.0" fx:id="x1" />
+          </font>
+          <textFill>
+            <Color blue="0.875" green="0.875" red="0.875" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Label font="$x1" layoutX="14.0" layoutY="165.0" text="Synopsis" textFill="$x2" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
