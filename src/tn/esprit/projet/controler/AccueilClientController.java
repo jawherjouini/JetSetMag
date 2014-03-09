@@ -81,7 +81,7 @@ public class AccueilClientController implements Initializable, ControlledScreen 
         if (AccueilController.page == 1) {
             titre.setText("Box Office");
             changecolor(btnBoxOffice, "white", "black");
-//            loading(MainApp.screen11File);
+            loading(MainApp.c_boxofficeFile);
         }
         if (AccueilController.page == 2) {
             titre.setText("News");
